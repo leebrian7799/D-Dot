@@ -6,5 +6,5 @@ import Root from './components/root';
 let store = configureStore;
 let root = document.getElementById('root');
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(<Root store={store} />, root);
+  ReactDOM.render(<h1>Welcom to DDOT</h1>, root);
 });
