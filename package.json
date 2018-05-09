@@ -4,7 +4,8 @@
     "npm": "3.10.10"
   },
   "scripts": {
-    "postinstall": "webpack"
+    "postinstall": "webpack",
+    "watch": "webpack --watch --development"
   },
   "dependencies": {
     "babel-core": "^6.26.3",
@@ -18,7 +19,7 @@
     "redux-logger": "^3.0.6",
     "webpack": "^4.8.1"
   },
-  "name": "D-Dot",
+  "name": "ddot",
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
   "main": "webpack.config.js",
