@@ -16,29 +16,42 @@
 
 
  .banner {
-    display: table;
-    position: relative;
-    text-align: center;
-    color: white;
-    width: 1886;
-    height: 300;
+  display: table;
+  position: relative;
+  text-align: center;
+  background-size: cover;
+  color: white;
+  width: 1886;
+  height: 300;
  }
 
  #background_img{
-
-    display: block;
-    position: center;
-    width: 100%;
-    height: auto;
-
-
+  display: block;
+  position: center;
+  width: 100%;
+  height: auto;
  }
 
+ .topnav {
+  background-color: #white;
+  overflow: hidden;
+ }
+
+ .topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
  .sitename {
-    color: lightgrey;
-    font-family: 'Codystar', Helvetica, sans-serif;
-    position: absolute;
-    font-size: 35px;
-    top: 8px;
-    left: 16px;
+  color: lightgrey;
+  font-family: 'Codystar', Helvetica, sans-serif;
+  position: absolute;
+  font-size: 30px;
+  top: 16px;
+  left: 16px;
  }

@@ -16,21 +16,11 @@ class NavBar extends React.Component {
 //   }
   render(){
     return (
-        <nav>
+        <div class="topnav">
           <div class='sitename'> D-Dot </div>
-
-          <div>
-            search
-          </div>
-
-          <div>
-            profile_pic
-          </div>
-        </nav>
-
-        // <search></search>
-        // <profile_pic></profile_pic>
-      // </div>
+          <div>Profile</div>
+          <div>SignUp</div>
+        </div>
     );
   }
 }
