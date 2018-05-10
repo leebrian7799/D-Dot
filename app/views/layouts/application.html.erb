@@ -3,12 +3,22 @@
   <head>
     <title>DDot</title>
     <%= csrf_meta_tags %>
-
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Exo+2">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+
+
+
+    <div class='banner'>
+      <img src = "/Willis-Tower.jpg" alt="Chicago" id='background_img' width:"1887" height: "456" />
+      <div class ="sitename" >D-Dot</h1>
+    </div>
   </head>
 
   <body>
+    <h1>Inside Body</h1>
     <%= yield %>
   </body>
 </html>

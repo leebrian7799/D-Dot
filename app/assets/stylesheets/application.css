@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .banner {
+    display: table;
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 1886;
+    height: 300;
+ }
+
+ #background_img{
+
+    display: block;
+    position: center;
+    width: 100%;
+    height: auto;
+
+
+ }
+
+ .sitename {
+    font-family: 'Exo 2', Helvetica, sans-serif;
+    position: absolute;
+    font-size: 35px;
+    top: 8px;
+    left: 16px;
+ }
