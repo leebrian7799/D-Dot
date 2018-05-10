@@ -35,7 +35,8 @@
  }
 
  .sitename {
-    font-family: 'Exo 2', Helvetica, sans-serif;
+    color: lightgrey;
+    font-family: 'Codystar', Helvetica, sans-serif;
     position: absolute;
     font-size: 35px;
     top: 8px;
