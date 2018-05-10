@@ -1,0 +1,17 @@
+.front-page-image {
+  width: 100vw;
+  height: 100vh;
+  background-image: image_url('front_page/Willis-Tower.jpg');
+  background-size:cover;
+  background-position:top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.front-page-image-text{
+  color: lightgrey;
+  font-family: Arial, Helvetica, sans-serif
+
+}

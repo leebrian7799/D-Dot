@@ -10,15 +10,12 @@ class NavBar extends React.Component {
 //   }
 //
 //
-//   render() {
-//
-//     return <h1>navbar</h1>;
-//   }
+
   render(){
     return (
       <div className="navbar">
         <div>
-          <Link to="#home" className="logo" > D-Dot </Link>
+          <Link to="/" className="logo" > D-Dot </Link>
         </div>
 
 
@@ -29,12 +26,7 @@ class NavBar extends React.Component {
 
       </div>
 
-      // <div float="right">
 
-      //   <a href="#contact">Business</a>
-      //   <button>Log In</button>
-      //   <button>Sign Up</button>
-      // </div>
 
     );
   }
