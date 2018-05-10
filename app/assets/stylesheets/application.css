@@ -39,13 +39,17 @@
   text-decoration: none;
  }
 
- #navbar {
+ .navbar {
+  display: flex;
   overflow: hidden;
   background: transparent;
   position: absolute;
   top: 16px;
   left: 16px;
   text-decoration: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-image: "/Willis-Tower.jpg";
 }
 
 

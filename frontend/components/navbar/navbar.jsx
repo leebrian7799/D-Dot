@@ -16,30 +16,24 @@ class NavBar extends React.Component {
 //   }
   render(){
     return (
-      <div id="navbar">
+      <div className="navbar">
         <div>
-          <a href="#home" class="logo"> D-Dot </a>
+          <Link to="#home" className="logo" > D-Dot </Link>
         </div>
 
+
         <div>
+          <Link to="/login">Log In</Link>
+          <Link to="/signup">Sign Up</Link>
         </div>
-          <a href="#news">Discover</a>
-          <a href="#contact">About</a>
-          <a href="#contact">Blog</a>
-          <a href="#contact">Marketplace</a>
-          <a href="#contact">Business</a>
-          <button>Log In</button>
-          <button>Sign Up</button>
 
       </div>
-      // <div class="">
-      //   <nav class="topnav">
-      //     <div class="logo" href="#"> D-Dot </div>
-      //     <ul>
-      //         <li>Test</li>
-      //         <li>Test</li>
-      //     </ul>
-      //   </nav>
+
+      // <div float="right">
+
+      //   <a href="#contact">Business</a>
+      //   <button>Log In</button>
+      //   <button>Sign Up</button>
       // </div>
 
     );
