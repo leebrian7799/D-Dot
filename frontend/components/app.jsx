@@ -6,7 +6,6 @@ import NavBarContainer from './navbar/navbar_container';
 const App = () => (
   <div>
      <header>
-       <GreetingContainer />
        <NavBarContainer />
      </header>
 
