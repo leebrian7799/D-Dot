@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-  
+
     let errors = this.props.errors.map((error, i) => (<li key={`error-${i}`}>{error}</li>) );
     return(
       <ul>
@@ -48,7 +48,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
-return (
+    return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           Welcome to D-Dot!
