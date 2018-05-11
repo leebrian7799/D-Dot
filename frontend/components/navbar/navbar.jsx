@@ -9,12 +9,6 @@ class NavBar extends React.Component {
           <Link to="/" className="logo" > D-Dot </Link>
         </div>
 
-        <div className='navbar-text'>
-          <p>Get inspired and share your best photos</p>
-          <p>Find your home among the world's best photographers.</p>
-          <Link to='/signup' className='front-page-signup-button'>Join D-Dot</Link>
-        </div>
-
         <div>
           <Link to="/login" className="navbar-link">Log In</Link>
           <Link to="/signup" className="navbar-link MyButton" >Sign Up</Link>

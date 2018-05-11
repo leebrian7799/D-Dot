@@ -40,6 +40,7 @@
   background: transparent;
   background-image: "/Willis-Tower.jpg";
   margin: 30px;
+  flex-wrap: wrap;
  }
 
   .navbar-link{
@@ -51,10 +52,14 @@
   }
 
   .navbar-text{
-    align-self: flex-end;
     color: lightgray;
     font-family: Helvetica, sans-serif;
     font-size: 20px;
+    text-align: center;
+    align-self: flex-end;
+  }
+
+  .navbar-text > a{
     text-decoration: none;
   }
 

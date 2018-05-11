@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import NavBarContainer from '../navbar/navbar_container';
 
 class SessionForm extends React.Component {
   constructor(props) {
