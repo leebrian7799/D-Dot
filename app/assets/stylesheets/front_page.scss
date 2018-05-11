@@ -1,17 +1,83 @@
-.front-page-image {
-  width: 100vw;
-  height: 100vh;
+
+.main-head {
+  grid-area: header;
   background-image: image_url('front_page/Willis-Tower.jpg');
-  background-size:cover;
-  background-position:top;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 600px;
+
+}
+.content {
+  grid-area: content;
+}
+.main-nav {
+  grid-area: nav;
+}
+.side {
+  grid-area: sidebar;
+}
+.ad {
+  grid-area: ad;
+}
+.main-footer {
+  grid-area: footer;
+}
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    "header"
+    "nav"
+    "content"
+    "sidebar"
+    "ad"
+    "footer";
+}
+@media (min-width: 500px) {
+  .wrapper {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "header  header"
+      "nav     nav"
+      "sidebar content"
+      "ad      footer";
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 700px) {
+  .wrapper {
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas:
+      "header header  header"
+      "nav    content sidebar"
+      "nav    content ad"
+      "footer footer  footer"
+   }
+   nav ul {
+     flex-direction: column;
+   }
 }
 
 
-.front-page-image-text{
-  color: lightgrey;
-  font-family: Arial, Helvetica, sans-serif
 
+.front-page-image {
+  background-color: gray;
+  // width: 100vw;
+  // height: 100vh;
+  //
+  //background-size:cover;
+  //background-position:top;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
 }
+//
+//
+// .front-page-image-text{
+//   color: lightgrey;
+//   font-family: Arial, Helvetica, sans-serif
+//
+// }
