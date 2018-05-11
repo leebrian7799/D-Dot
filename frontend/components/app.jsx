@@ -9,6 +9,7 @@ const App = () => (
      <header>
        <NavBarContainer />
      </header>
+
      <Switch>
        <Route exact path="/" component={FrontPageContainer} />
        <Route path="/login" component={SessionFormContainer} />
