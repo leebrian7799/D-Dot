@@ -5,6 +5,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import NavBarContainer from './navbar/navbar_container';
 import FrontPageContainer from './front_page/front_page_container';
 const App = () => (
+  debugger
   <div>
      <Switch>
        <Route exact path="/" component={FrontPageContainer} />

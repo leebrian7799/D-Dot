@@ -50,7 +50,7 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
+      <div className="session-wrapper">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           Welcome to D-Dot!
           <br/>
@@ -78,6 +78,19 @@ class SessionForm extends React.Component {
           </div>
         </form>
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
     );
   }
 }
