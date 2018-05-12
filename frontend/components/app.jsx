@@ -4,13 +4,13 @@ import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 import NavBarContainer from './navbar/navbar_container';
 import FrontPageContainer from './front_page/front_page_container';
+import {AuthRoute} from '../util/route_util'
 const App = () => (
-  debugger
-  <div>
+    <div className="app">
      <Switch>
        <Route exact path="/" component={FrontPageContainer} />
-       <Route path="/login" component={SessionFormContainer} />
-       <Route exact path="/signup" component={SessionFormContainer} />
+       <AuthRoute path="/login" component={SessionFormContainer} />
+       <AuthRoute exact path="/signup" component={SessionFormContainer} />
       </Switch>
    </div>
 );
