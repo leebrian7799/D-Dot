@@ -10,17 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180509124953) do
+ActiveRecord::Schema.define(version: 20180512220545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
-    t.string "session_token"
+  create_table "photos", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "file_name"
+    t.integer "author_id"
+    t.integer "comment_ids"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_photos_on_author_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username", null: false
+    t.string "session_token", null: false
+    t.string "password_digest", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["session_token"], name: "index_users_on_session_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end
