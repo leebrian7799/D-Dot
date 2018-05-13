@@ -1,4 +1,4 @@
-import * as PhotosApiUtil from '../util/photos/photos_api_util';
+import * as PhotosApiUtil from '../util/photo_api_util';
 
 export const RECEIVE_ALL_PHOTOS = 'RECEIVE_PHOTOS';
 export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
