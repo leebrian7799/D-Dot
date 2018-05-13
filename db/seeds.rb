@@ -7,19 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-ActiveRecord::Schema.define(version: 20170714030306) do
+user1 = User.create({username: 'guest', password: '123456'})
+user2 = User.create({username: 'Bill', password: '123456'})
+user3 = User.create({username: 'Mill', password: '123456'})
+user4 = User.create({username: 'Dill', password: '123456'})
+user5 = User.create({username: 'Phil', password: '123456'})
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "users", force: :cascade do |t|
-    t.string "username", null: false
-    t.string "session_token", null: false
-    t.string "password_digest", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["session_token"], name: "index_users_on_session_token", unique: true
-    t.index ["username"], name: "index_users_on_username", unique: true
-  end
-
-end
+photo1 = Photo.create({
+  title: 'First Photo',
+  description: 'Very first photo in the DB',
+  author_id: user3.id}
+)
