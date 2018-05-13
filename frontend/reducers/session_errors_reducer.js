@@ -5,6 +5,10 @@ import {
 
 export default (state = [], action) => {
   Object.freeze(state);
+  debugger
+  console.log(action);
+  console.log(state);
+  console.log(action.errors);
   switch (action.type) {
     case RECEIVE_SESSION_ERRORS:
       return action.errors;
