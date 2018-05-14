@@ -1,33 +1,20 @@
 import * as APIUtil from '../util/session_api_util';
+import {receiveErrors, clearErrors} from './error_actions'
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
-export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
-export const RECEIVE_SIGNUP_ERRORS = 'RECEIVE_SIGNUP_ERRORS';
 
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
   currentUser
 });
 
-export const receiveErrors = errors => {
-  return {
-  type: RECEIVE_SESSION_ERRORS,
-  errors
-  };
-};
-
-export const receiveSignUpErrors = errors => {
-  return {
-  type: RECEIVE_SIGNUP_ERRORS,
-  errors
-  };
-};
 
 export const signup = user => dispatch => (
-  APIUtil.signup(user).then(user => (
-    dispatch(receiveCurrentUser(user))
-  ), errors => {
-    return dispatch(receiveSignUpErrors(errors.responseText));
+  APIUtil.signup(user).then(user => {
+    dispatch(receiveCurrentUser(user));
+    dispatch(clearErrors());
+  }, errors => {
+    return dispatch(receiveErrors(errors.responseJSON));
   })
 );
 

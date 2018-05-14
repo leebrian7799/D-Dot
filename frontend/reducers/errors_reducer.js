@@ -1,7 +1,16 @@
-import { combineReducers } from 'redux';
+import {
+  RECEIVE_ERRORS,
+  CLEAR_ERRORS
+} from '../actions/error_actions';
 
-import session from './session_errors_reducer';
-
-export default combineReducers({
-  session,
-});
+export default (state = [], action) => {
+  Object.freeze(state);
+  switch (action.type) {
+    case RECEIVE_ERRORS:
+      return action.errors;
+    case CLEAR_ERRORS:
+      return [];
+    default:
+      return state;
+  }
+};

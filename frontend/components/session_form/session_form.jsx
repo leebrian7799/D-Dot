@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import NavBarContainer from '../navbar/navbar_container';
+import Errors from '../error/errors_container';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -38,26 +39,18 @@ class SessionForm extends React.Component {
     }
   }
 
-  renderErrors() {
-  
-    let errors = this.props.errors.map((error, i) => (<li key={`error-${i}`}>{error}</li>) );
-    return(
-      <ul>
-        {errors}
-      </ul>
-    );
-  }
 
   render() {
+  
     return (
       <div className="session-wrapper">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           Welcome to D-Dot!
           <br/>
           Please {this.props.formType} or {this.navLink()}
-          {this.renderErrors()}
           <div className="login-form">
             <label></label>
+            <Errors />
             <br/>
             <label>Email or Username
               <br/>

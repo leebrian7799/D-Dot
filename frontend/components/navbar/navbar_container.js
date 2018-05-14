@@ -6,7 +6,6 @@ import { fetchAllPhotos } from '../../actions//photo_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-
   return {
 
   };

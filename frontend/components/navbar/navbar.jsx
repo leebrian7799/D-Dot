@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import GreetingContainer from '../greeting/greeting_container';
+const Modal = require('react-modal');
+
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
@@ -44,7 +46,20 @@ class NavBar extends React.Component {
         <div>
           <Link to="/login" className="navbar-link">Log In</Link>
           <Link to="/signup" className="navbar-link MyButton" >Sign Up</Link>
+
+          <button onClick={this.openModal}>Upload</button>          
+          <Modal
+            isOpen={this.state.modalOpen}
+            onRequestClose={this.closeModal}>
+
+            <h2>Im a modal!</h2>
+            <p>modal modal modal modal modal</p>
+            <p>mooooooooodal!</p>
+
+          </Modal>
         </div>
+
+
 
       </div>
     );
