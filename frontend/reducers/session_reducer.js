@@ -16,9 +16,7 @@ const sessionReducer = (state = _nullUser, action) => {
       const currentUser = action.currentUser;
       return merge({}, { currentUser });
     case RECEIVE_SIGNUP_ERRORS:
-      debugger
       let newState = Object.assign({}, state, {errors: action.errors});
-      debugger
       return newState;
     default:
       return state;
