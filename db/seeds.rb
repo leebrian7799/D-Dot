@@ -18,3 +18,9 @@ photo1 = Photo.create({
   description: 'Very first photo in the DB',
   author_id: user3.id}
 )
+
+photo2 = Photo.create({
+    title: "Second photo",
+    description: "Very second photo in the DB",
+    author_id: 1
+})
