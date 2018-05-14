@@ -47,7 +47,7 @@ class NavBar extends React.Component {
           <Link to="/login" className="navbar-link">Log In</Link>
           <Link to="/signup" className="navbar-link MyButton" >Sign Up</Link>
 
-          <button onClick={this.openModal}>Upload</button>          
+          <button onClick={this.openModal}>Upload</button>
           <Modal
             isOpen={this.state.modalOpen}
             onRequestClose={this.closeModal}>
@@ -55,6 +55,8 @@ class NavBar extends React.Component {
             <h2>Im a modal!</h2>
             <p>modal modal modal modal modal</p>
             <p>mooooooooodal!</p>
+
+
 
           </Modal>
         </div>
