@@ -1,18 +1,27 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import GreetingContainer from '../greeting/greeting_container';
+import UploadFormContainer from '../upload/upload_form_container';
 const Modal = require('react-modal');
+
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { modalOpen: false };
+    this.state = { modalOpen: false,
+      title: '',
+      description: '',
+      imageUrl: "",
+      imageFile: null,
+      errors: {}
+    };
 
     this.handleModal = this.handleModal.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleLogOut = this.handleLogOut.bind(this);
     this.mainNav = this.mainNav.bind(this);
+    // this.readFile = this.readFile.bind(this);
     }
 
   componentWillReceiveProps(newProps) {
@@ -37,6 +46,22 @@ class NavBar extends React.Component {
     this.props.logout().then(() => this.props.history.push('/'));
   }
 
+  readFile(e) {
+    e.preventDefault();
+    const reader = new FileReader();
+    const file = e.currentTarget.files[0];
+
+    reader.onloadend = function () {
+      this.setState({ imageUrl: reader.result, imageFile: file });
+    }.bind(this);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ imageUrl: "", imageFile: null });
+    }
+  }
+
 
   mainNav(){
     return (
@@ -48,12 +73,6 @@ class NavBar extends React.Component {
         <div>
           <Link to="/login" className="navbar-link" style={{ textDecoration: 'none', color: 'white' }}>Log In</Link>
           <Link to="/signup" className="navbar-link MyButton" >Sign Up</Link>
-
-          <button onClick={this.openModal}>Upload</button>
-          <Modal
-            isOpen={this.state.modalOpen}
-            onRequestClose={this.closeModal}>
-          </Modal>
         </div>
       </div>
     );
@@ -67,19 +86,17 @@ class NavBar extends React.Component {
         </div>
 
         <div>
-          <ul className="plainWhiteText">
-            <li onClick={this.handleLogOut} style={{color: 'white' }}>Log Out</li>
-          </ul>
-
+          <strong onClick={this.handleLogOut}  style={{margin: '4px'}}>Log Out</strong>
+          <button onClick={this.openModal}>Upload</button>
           <Modal
             isOpen={this.state.modalOpen}
             onRequestClose={this.closeModal}>
+            <UploadFormContainer/>
           </Modal>
         </div>
       </div>
     );
   }
-  // <button onClick={this.openModal}>Upload</button>
 
   render(){
     let currentNavBar;

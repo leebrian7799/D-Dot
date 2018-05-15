@@ -2,9 +2,9 @@ import UploadForm from './upload_form';
 import { connect } from 'react-redux';
 
 
-const map
+const mapStateToProps = state => {
   return {
-    currentUser = state.session.currentUser.username;
+    currentUser: state.session.currentUser.username,
   };
 };
 
@@ -17,4 +17,4 @@ const mapDispatchToProps = (dispatch, { location }) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SessionForm);
+)(UploadForm);
