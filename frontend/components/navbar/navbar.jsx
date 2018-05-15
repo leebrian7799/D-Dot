@@ -12,6 +12,7 @@ class NavBar extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleLogOut = this.handleLogOut.bind(this);
+    this.mainNav = this.mainNav.bind(this);
     }
 
   componentWillReceiveProps(newProps) {
@@ -36,7 +37,8 @@ class NavBar extends React.Component {
     this.props.logout().then(() => this.props.history.push('/'));
   }
 
-  render(){
+
+  mainNav(){
     return (
       <div className="navbar">
         <div >
@@ -44,27 +46,49 @@ class NavBar extends React.Component {
         </div>
 
         <div>
-          <Link to="/login" className="navbar-link">Log In</Link>
+          <Link to="/login" className="navbar-link" style={{ textDecoration: 'none', color: 'white' }}>Log In</Link>
           <Link to="/signup" className="navbar-link MyButton" >Sign Up</Link>
 
           <button onClick={this.openModal}>Upload</button>
           <Modal
             isOpen={this.state.modalOpen}
             onRequestClose={this.closeModal}>
-
-            <h2>Im a modal!</h2>
-            <p>modal modal modal modal modal</p>
-            <p>mooooooooodal!</p>
-
-
-
           </Modal>
         </div>
-
-
-
       </div>
     );
+  }
+
+  loggedIn(){
+    return (
+      <div className="navbar">
+        <div >
+          <Link to="/" className="logo" > D-Dot </Link>
+        </div>
+
+        <div>
+          <ul className="plainWhiteText">
+            <li onClick={this.handleLogOut} style={{color: 'white' }}>Log Out</li>
+          </ul>
+
+          <Modal
+            isOpen={this.state.modalOpen}
+            onRequestClose={this.closeModal}>
+          </Modal>
+        </div>
+      </div>
+    );
+  }
+  // <button onClick={this.openModal}>Upload</button>
+
+  render(){
+    let currentNavBar;
+    if (this.props.currentUser) {
+      currentNavBar = this.loggedIn();
+    } else {
+      currentNavBar = this.mainNav();
+    }
+    return currentNavBar;
   }
 }
 //

@@ -6,8 +6,13 @@ import { fetchAllPhotos } from '../../actions//photo_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
+  let currentUsername;
+  if (state.session.currentUser) {
+    currentUsername = state.session.currentUser.username;
+  }
   return {
-
+    currentUser: Boolean(state.session.currentUser),
+    currentUsername: currentUsername,
   };
 };
 

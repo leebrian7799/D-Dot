@@ -59,6 +59,7 @@
   background-image: image_url("willis-tower.jpg");
   margin: 30px;
   flex-wrap: wrap;
+  list-style: none;
  }
 
   .navbar-link{
@@ -67,6 +68,7 @@
     font-size: 17px;
     color: blue;
     text-decoration: none;
+    color: 'white';
   }
 
   .navbar-text{
@@ -79,6 +81,10 @@
 
   .navbar-text > a{
     text-decoration: none;
+  }
+
+  .plainWhiteText{
+    list-style: none;
   }
 
   .MyButton {

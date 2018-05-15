@@ -41,7 +41,7 @@ class SessionForm extends React.Component {
 
 
   render() {
-  
+
     return (
       <div className="session-wrapper">
         <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
             <label></label>
             <Errors />
             <br/>
-            <label>Email or Username
+            <label>Username
               <br/>
               <input type="text"
                 value={this.state.username}
