@@ -1,6 +1,8 @@
 import {
   RECEIVE_ALL_PHOTOS,
-  RECEIVE_PHOTO} from '../actions/photo_actions';
+  RECEIVE_PHOTO,
+  REMOVE_PHOTO
+} from '../actions/photo_actions';
 import { LOG_OUT } from '../actions/session_actions';
 
 const photosReducer = (state = {}, action) => {

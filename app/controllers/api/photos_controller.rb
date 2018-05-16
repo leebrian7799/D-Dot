@@ -12,7 +12,7 @@ class Api::PhotosController < ApplicationController
   end
 
   def index
-    @photos = Photos.all
+    @photos = Photo.all
   end
 
   def create

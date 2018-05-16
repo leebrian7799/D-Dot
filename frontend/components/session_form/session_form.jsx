@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import NavBarContainer from '../navbar/navbar_container';
 import Errors from '../error/errors_container';
 
+
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -17,6 +18,7 @@ class SessionForm extends React.Component {
     if (nextProps.loggedIn) {
       this.props.history.push('/');
     }
+    this.props.clearErrors();
   }
 
   update(field) {
@@ -41,7 +43,6 @@ class SessionForm extends React.Component {
 
 
   render() {
-
     return (
       <div className="session-wrapper">
         <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -74,8 +75,6 @@ class SessionForm extends React.Component {
           </div>
         </form>
       </div>
-
-
     );
   }
 }
