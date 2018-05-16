@@ -10,25 +10,26 @@ class UploadForm extends React.Component {
       description: '',
       image: null,
       imageFile: null,
+      uploading: false,
       errors: {}
     };
     this.handleUploadImage = this.handleUploadImage.bind(this);
     this.updateFile = this.updateFile.bind(this);
+    this.formatForm = this.formatForm.bind(this);
   }
 
   updateFile(e){
-    debugger
     const reader = new FileReader();
     const file = e.currentTarget.files[0];
     reader.onloadend = () =>
     this.setState({ imageUrl: reader.result, imageFile: file});
     if (file) {
       reader.readAsDataURL(file);
+      this.setState({uploading: true});
     } else {
       this.setState({ imageUrl: "", imageFile: null });
     }
   }
-
 
   handleUploadImage(e) {
     if (!this.state.imageFile) {
@@ -47,19 +48,39 @@ class UploadForm extends React.Component {
         this.props.history.push(newPath);
       }
     });
+    debugger
+  }
+  handleChange(field) {
+    return (e) => {
+      this.setState({[field]: e.target.value });
+    };
   }
 
+  formatForm(){
+    if (!this.state.uploading){
+      return (
+      <div className="upload-form">
+        <img src={this.state.imageUrl} />
+        <input type="file" id="file" multiple="multiple" onChange={this.updateFile}></input>
+      </div>
+      );
+    } else {
+      return (
+        <div className="upload-form" onSubmit={this.handleUploadImage} >
+          <img src={this.state.imageUrl} />
+          <form onSubmit={this.handleUploadImage}>
+            Title: <input type="text" onChange={this.handleChange('title')} /><br/>
+            Description: <textarea type="text" onChange={this.handleChange('description')} /><br/>
+          <input type="submit"></input>
+          </form>
+        </div>
+      );
+    }
+  }
 
   render(){
-    return (
-        <div>
-          <input type="file" onChange={this.updateFile} />
-          <img src={this.state.imageUrl} />
-          <input type="file" id="file" multiple="multiple" onChange={this.updateFiles}></input>
-        </div>
-    );
+    return this.formatForm();
   }
 }
-//<input onChang={()=>this.handleImagePreview} ref={(ref) => { this.fileName = ref; }} type="text" placeholder="Type in name of file" />
 
 export default withRouter(UploadForm);
