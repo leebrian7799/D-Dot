@@ -4,7 +4,6 @@ import NavBarContainer from '../navbar/navbar_container';
 
 const FrontPage = (props) => {
     return (
-
       <div className="wrapper">
         <header className="main-head">
           <div></div>
@@ -16,7 +15,6 @@ const FrontPage = (props) => {
             </div>
           <br/>
         </header>
-    
       </div>
 
     );

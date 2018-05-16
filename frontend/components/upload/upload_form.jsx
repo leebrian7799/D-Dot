@@ -3,52 +3,63 @@ import { Link, withRouter } from "react-router-dom";
 
 
 class UploadForm extends React.Component {
-
   constructor (props){
     super(props);
     this.state = {
-      imageURL: '',
+      title: '',
+      description: '',
+      image: null,
+      imageFile: null,
+      errors: {}
     };
     this.handleUploadImage = this.handleUploadImage.bind(this);
+    this.updateFile = this.updateFile.bind(this);
+  }
+
+  updateFile(e){
+    debugger
+    const reader = new FileReader();
+    const file = e.currentTarget.files[0];
+    reader.onloadend = () =>
+    this.setState({ imageUrl: reader.result, imageFile: file});
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ imageUrl: "", imageFile: null });
+    }
   }
 
 
   handleUploadImage(e) {
-    e.preventDefault();
-
-    const data = new FormData();
-    data.append('file', this.uploadInput.files[0]);
-    data.append('filename', this.fileName.value);
-
-    fetch('http://localhost:3000/upload', {
-      method: 'POST',
-      body: data,
-    }).then((response) => {
-      response.json().then((body) => {
-        this.setState({ imageURL: `http://localhost:3000/${body.file}` });
-      });
+    if (!this.state.imageFile) {
+      return;
+    }
+    const formData = new FormData();
+    formData.append('photo[title]', this.state.title);
+    formData.append('photo[description]', this.state.description);
+    formData.append('photo[image]', this.state.imageFile);
+    formData.append('photo[author_id]', this.props.currentUser.id);
+    this.props.createPhoto(formData).then(res => {
+      this.setState({imageUrl: null});
+      this.closeModal();
+      let newPath = `/${this.props.currentUser.username}`;
+      if (newPath !== this.props.location.pathname) {
+        this.props.history.push(newPath);
+      }
     });
   }
 
 
   render(){
-    console.log("In render");
     return (
-      <form onSubmit={this.handleUploadImage}>
         <div>
-          <button>Upload</button>
+          <input type="file" onChange={this.updateFile} />
+          <img src={this.state.imageUrl} />
+          <input type="file" id="file" multiple="multiple" onChange={this.updateFiles}></input>
         </div>
-        <div>
-          <input ref={(ref) => { this.uploadInput = ref; }} type="file" />
-        </div>
-        <div>
-          <input ref={(ref) => { this.fileName = ref; }} type="text" placeholder="Enter the desired name of file" />
-        </div>
-        <br />
-        <img src={this.state.imageURL} alt="img" />
-      </form>
     );
   }
 }
-//
+//<input onChang={()=>this.handleImagePreview} ref={(ref) => { this.fileName = ref; }} type="text" placeholder="Type in name of file" />
+
 export default withRouter(UploadForm);

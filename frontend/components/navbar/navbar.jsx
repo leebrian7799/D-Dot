@@ -8,12 +8,7 @@ const Modal = require('react-modal');
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { modalOpen: false,
-      title: '',
-      description: '',
-      imageUrl: "",
-      imageFile: null,
-      errors: {}
+    this.state = { modalOpen: false
     };
 
     this.handleModal = this.handleModal.bind(this);
@@ -44,22 +39,6 @@ class NavBar extends React.Component {
   handleLogOut(e) {
     e.preventDefault();
     this.props.logout().then(() => this.props.history.push('/'));
-  }
-
-  readFile(e) {
-    e.preventDefault();
-    const reader = new FileReader();
-    const file = e.currentTarget.files[0];
-
-    reader.onloadend = function () {
-      this.setState({ imageUrl: reader.result, imageFile: file });
-    }.bind(this);
-
-    if (file) {
-      reader.readAsDataURL(file);
-    } else {
-      this.setState({ imageUrl: "", imageFile: null });
-    }
   }
 
 

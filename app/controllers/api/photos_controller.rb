@@ -40,7 +40,7 @@ class Api::PhotosController < ApplicationController
 
   private
   def photo_params
-    params.require(:photo).permit(:title, :description, :author_id)
+    params.require(:photo).permit(:title, :description, :author_id, :image)
   end
 
 end
