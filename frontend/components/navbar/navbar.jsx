@@ -67,8 +67,7 @@ class NavBar extends React.Component {
         <div>
           <strong onClick={this.handleLogOut}  style={{margin: '4px'}}>Log Out</strong>
           <button onClick={this.openModal}>Upload</button>
-          <Modal
-          
+          <Modal id="upload-modal"
             isOpen={this.state.modalOpen}
             onRequestClose={this.closeModal}>
             <UploadFormContainer/>

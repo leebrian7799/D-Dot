@@ -7,8 +7,8 @@ const FrontPage = (props) => {
       <div className="wrapper">
         <header className="main-head">
           <div></div>
-          <NavBarContainer />
             <div className='navbar-text'>
+              <br/><br/><br/><br/><br/><br/>
               <p><font size="30d">Get inspired and share your best photos</font></p>
               <p>Find your home among the world's best photographers.</p>
               <Link to="/signup" className="navbar-link MyButton" >Join D-Dot</Link>

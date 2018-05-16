@@ -50,18 +50,18 @@
  }
 
  .navbar {
-  left: 32px;
-  top: 32px;
   display: flex;
+  align-self: flex-start;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: row;
   overflow: hidden;
-  background: transparent;
-  background-image: image_url("willis-tower.jpg");
+  background-color: transparent;
   margin: 30px;
   flex-wrap: wrap;
   list-style: none;
+  position: absolute;
+  z-index: 8;
  }
 
   .navbar-link{
@@ -78,8 +78,10 @@
     font-family: Helvetica, sans-serif;
     font-size: 20px;
     text-align: center;
-    align-self: flex-end;
+    align-self: center;
+    justify-self: center;
   }
+
 
   .navbar-text > a{
     text-decoration: none;

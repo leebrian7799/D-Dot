@@ -5,6 +5,8 @@ import configureStore from './store/store';
 const Modal = require('react-modal');
 
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
   let store;
    if (window.currentUser) {

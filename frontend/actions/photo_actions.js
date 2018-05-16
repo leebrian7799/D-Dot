@@ -47,7 +47,7 @@ export const fetchSinglePhoto = (id) => dispatch => (
 
 export const createPhoto = (photo) => dispatch => (
     PhotosApiUtil.createPhoto(photo).then(
-      photo => dispatch(receiveSinglePhoto(photo))
+      photo => dispatch(receivePhoto(photo))
     ).fail(
       errors => dispatch(receivePhotoErrors(errors))
     )
