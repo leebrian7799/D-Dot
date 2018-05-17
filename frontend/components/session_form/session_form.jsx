@@ -35,7 +35,6 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
     const user = this.state;
     this.props.processForm({user});
   }
@@ -57,11 +56,13 @@ class SessionForm extends React.Component {
     return (
       <div className="session-wrapper">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to D-Dot!
-          <br/>
-          Please {this.props.formType} or {this.navLink()}
+          <div>
+            Welcome to D-Dot!
+            <br/>
+            Please {this.props.formType} or {this.navLink()}
+          </div>
+          
           <div className="login-form">
-            <label></label>
             <Errors />
             <br/>
             <label>Username
@@ -86,15 +87,23 @@ class SessionForm extends React.Component {
           </div>
 
           <div>
-            <input type="submit" value="Demo user" onClick={() => (this.guestLogin(
-                  {username: "guest", password: "123456"}
-                ))}>
-            </input>
+            {
+              this.props.formType === 'login' ?
+                <input type="submit" value="Demo user" onClick={() => (this.guestLogin(
+                    {username: "guest", password: "123456"}
+                  ))}>
+                </input>
+              : null
+            }
           </div>
+
         </form>
       </div>
     );
   }
 }
+
+
+
 
 export default withRouter(SessionForm);

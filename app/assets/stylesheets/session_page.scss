@@ -1,13 +1,16 @@
 .session-wrapper{
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: gray;
   width: 100vw;
   height: 100vh;
+
 }
 
 .login-form-box{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   border-style: solid;
   border-width: 1px;
   border-color: lightgrey;

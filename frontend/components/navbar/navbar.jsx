@@ -48,10 +48,26 @@ class NavBar extends React.Component {
         <div className="leftnav">
           <Link to="/" className="link-text logo" > D-Dot </Link>
         </div>
+        {
+          this.props.formType === 'login' ?
+          <input type="submit" value="Demo user" onClick={() => (this.guestLogin(
+              {username: "guest", password: "123456"}
+            ))}>
+          </input>
+          : null
+        }
 
         <div className="rightnav">
-          <Link to="/login" className="link-text navbar-link" style={{ textDecoration: 'none', color: 'white' }}>Log In</Link>
-          <Link to="/signup" className="link-text navbar-link signup" >Sign Up</Link>
+          {
+            (this.props.location.pathname === '/signup' || this.props.location.pathname === '/') ?
+              <Link to="/login" className="link-text navbar-link" style={{ textDecoration: 'none', color: 'white' }}>Log In</Link>
+              : null
+          }
+          {
+            (this.props.location.pathname === '/login' || this.props.location.pathname === '/') ?
+            <Link to="/signup" className="link-text navbar-link signup" >Sign Up</Link>
+              : null
+          }
         </div>
       </div>
     );
