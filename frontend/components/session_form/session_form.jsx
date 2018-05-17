@@ -19,6 +19,11 @@ class SessionForm extends React.Component {
       this.props.history.push('/');
     }
     this.props.clearErrors();
+    if (this.props !== nextProps){
+      this.setState({
+        username: '',
+        password: ''});
+    }
   }
 
   update(field) {

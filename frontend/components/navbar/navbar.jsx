@@ -2,7 +2,6 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import GreetingContainer from '../greeting/greeting_container';
 import UploadFormContainer from '../upload/upload_form_container';
-const Modal = require('react-modal');
 
 
 class NavBar extends React.Component {
@@ -29,7 +28,8 @@ class NavBar extends React.Component {
   }
 
   openModal() {
-    this.setState({modalOpen: true});
+    // this.setState({modalOpen: true});
+    document.getElementById('upload-modal').show();
   }
 
   closeModal() {
@@ -66,12 +66,7 @@ class NavBar extends React.Component {
 
         <div>
           <strong onClick={this.handleLogOut}  style={{margin: '4px'}}>Log Out</strong>
-          <button onClick={this.openModal}>Upload</button>
-          <Modal id="upload-modal"
-            isOpen={this.state.modalOpen}
-            onRequestClose={this.closeModal}>
-            <UploadFormContainer/>
-          </Modal>
+          <button onClick={this.props.uploadPhotos}>Upload</button>
         </div>
       </div>
     );

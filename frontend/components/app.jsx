@@ -6,6 +6,7 @@ import NavBarContainer from './navbar/navbar_container';
 import FrontPageContainer from './front_page/front_page_container';
 import FeedContainer from './feed/feed_container';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
+import Modal from './modal/modal';
 
 const App = () => (
     <div className="app">
@@ -15,7 +16,8 @@ const App = () => (
        <Route exact path="/" component={FrontPageContainer} />
        <AuthRoute path="/login" component={SessionFormContainer} />
        <AuthRoute exact path="/signup" component={SessionFormContainer} />
-      </Switch>
+     </Switch>
+    <Modal />
    </div>
 );
 
