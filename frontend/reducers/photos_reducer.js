@@ -8,7 +8,6 @@ import { LOG_OUT } from '../actions/session_actions';
 const photosReducer = (state = {}, action) => {
   let newState;
   Object.freeze(state);
-
   switch (action.type) {
     case RECEIVE_ALL_PHOTOS:
       return action.photos;

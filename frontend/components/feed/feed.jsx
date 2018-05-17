@@ -11,6 +11,7 @@ class Feed extends React.Component {
     this.props.fetchAllPhotos();
   }
 
+
   render() {
     let that = this;
     let allPhotos;

@@ -40,14 +40,13 @@ class UploadForm extends React.Component {
     formData.append('photo[description]', this.state.description);
     formData.append('photo[image]', this.state.imageFile);
     formData.append('photo[author_id]', this.props.currentUser.id);
-
     this.props.createPhoto(formData).then(res => {
-      this.setState({imageUrl: null});
+      // this.setState({imageUrl: null});
       //window.closeModal();
-      let newPath = `/${this.props.currentUser.username}`;
-      if (newPath !== this.props.location.pathname) {
-        this.props.history.push(newPath);
-      }
+      // let newPath = `/${this.props.currentUser.username}`;
+      // if (newPath !== this.props.location.pathname) {
+        this.props.history.push('/feed');
+      // }
     });
   }
   handleChange(field) {
@@ -66,12 +65,12 @@ class UploadForm extends React.Component {
       );
     } else {
       return (
-        <div className="upload-form" onSubmit={this.handleUploadImage} >
+        <div className="upload-form" >
           <img src={this.state.imageUrl} />
           <form onSubmit={this.handleUploadImage}>
             Title: <input type="text" onChange={this.handleChange('title')} /><br/>
             Description: <textarea type="text" onChange={this.handleChange('description')} /><br/>
-          <input type="submit"></input>
+          <input type="submit" />
           </form>
         </div>
       );
