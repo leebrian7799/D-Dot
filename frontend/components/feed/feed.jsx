@@ -7,7 +7,6 @@ class Feed extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.fetchUser(this.props.sessionUser.username);
     this.props.fetchAllPhotos();
   }
 
@@ -17,8 +16,8 @@ class Feed extends React.Component {
     if (that.props.photos.length) {
       allPhotos = that.props.photos.map( (photo, idx) => {
         return (
-          <div key={idx} >
-            <img src={`${photo.image}`}></img>
+          <div key={idx} className="feed-item-container">
+              <FeedItemContainer photo={photo} />
           </div>
         );
       }).reverse();

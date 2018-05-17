@@ -42,13 +42,8 @@ class UploadForm extends React.Component {
     formData.append('photo[image]', this.state.imageFile);
     formData.append('photo[author_id]', this.props.currentUser.id);
     this.props.createPhoto(formData).then(res => {
-      // this.setState({imageUrl: null});
-      //window.closeModal();
-      // let newPath = `/${this.props.currentUser.username}`;
-      // if (newPath !== this.props.location.pathname) {
         this.props.closeModal();
         this.props.history.push('/feed');
-      // }
     });
   }
   handleChange(field) {
