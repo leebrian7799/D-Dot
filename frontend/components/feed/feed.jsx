@@ -11,7 +11,6 @@ class Feed extends React.Component {
     this.props.fetchAllPhotos();
   }
 
-
   render() {
     let that = this;
     let allPhotos;
@@ -24,26 +23,12 @@ class Feed extends React.Component {
         );
       }).reverse();
     }
+
     return (
       <div>
-        {allPhotos}
+        { allPhotos }
       </div>
     );
-    //
-    //
-    // if (this.props.location.pathname === '/' || this.props.location.pathname === '/discover') {
-    //   return (
-    //     <div id='discover'>
-    //       {allPhotos}
-    //     </div>
-    //   );
-    // } else {
-    //   return (
-    //     <div id="feed">
-    //       {allPhotos}
-    //     </div>
-    //   );
-    // }
   }
 }
 

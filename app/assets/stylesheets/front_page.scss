@@ -1,67 +1,109 @@
-
-.main-head {
-  grid-area: header;
+.front{
+  height: calc(80vh);
+  min-height: 320px;
   background-image: image_url('willis-tower.jpg');
-  background-repeat: no-repeat;
   background-size: 100% 100%;
-  height: 600px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
 }
-.content {
-  grid-area: content;
+
+.banner{
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
-.main-nav {
-  grid-area: nav;
+
+.header1{
+  font-size: 50px;
+  padding-bottom: 40px;
 }
-.side {
-  grid-area: sidebar;
+
+.header2{
+  font-size: 22px;
 }
-.ad {
-  grid-area: ad;
-}
-.main-footer {
-  grid-area: footer;
-}
-.wrapper {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-areas:
-    "header"
-    "nav"
-    "content"
-    "sidebar"
-    "ad"
-    "footer";
-}
-@media (min-width: 500px) {
-  .wrapper {
-    grid-template-columns: 1fr 3fr;
-    grid-template-areas:
-      "header  header"
-      "nav     nav"
-      "sidebar content"
-      "ad      footer";
-  }
-  nav ul {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-@media (min-width: 700px) {
-  .wrapper {
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-template-areas:
-      "header header  header"
-      "nav    content sidebar"
-      "nav    content ad"
-      "footer footer  footer"
-   }
-   nav ul {
-     flex-direction: column;
-   }
+
+.joinbutton{
+  margin-top: 40px;
+  font-size: 18px;
+  background-color: #0099e5;
+  height: 50px;
+  width: 160px;
+  border-radius: 25px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
 }
 
 
 
-.front-page-image {
-  background-color: gray;
-}
+//
+// .main-head {
+//   grid-area: header;
+//   background-image: image_url('willis-tower.jpg');
+//   background-repeat: no-repeat;
+//   background-size: 100% 100%;
+//   height: 600px;
+// }
+// .content {
+//   grid-area: content;
+// }
+// .main-nav {
+//   grid-area: nav;
+// }
+// .side {
+//   grid-area: sidebar;
+// }
+// .ad {
+//   grid-area: ad;
+// }
+// .main-footer {
+//   grid-area: footer;
+// }
+// .wrapper {
+//   display: grid;
+//   grid-gap: 20px;
+//   grid-template-areas:
+//     "header"
+//     "nav"
+//     "content"
+//     "sidebar"
+//     "ad"
+//     "footer";
+// }
+// @media (min-width: 500px) {
+//   .wrapper {
+//     grid-template-columns: 1fr 3fr;
+//     grid-template-areas:
+//       "header  header"
+//       "nav     nav"
+//       "sidebar content"
+//       "ad      footer";
+//   }
+//   nav ul {
+//     display: flex;
+//     justify-content: space-between;
+//   }
+// }
+// @media (min-width: 700px) {
+//   .wrapper {
+//     grid-template-columns: 1fr 4fr 1fr;
+//     grid-template-areas:
+//       "header header  header"
+//       "nav    content sidebar"
+//       "nav    content ad"
+//       "footer footer  footer"
+//    }
+//    nav ul {
+//      flex-direction: column;
+//    }
+// }
+//
+//
+//
+// .front-page-image {
+//   background-color: gray;
+// }

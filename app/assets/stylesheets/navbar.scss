@@ -1,0 +1,39 @@
+.navbar {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  flex-flow: row, nowrap;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  font-size: 14px;
+}
+
+.leftnav{
+  color: white;
+}
+
+.logo {
+  font-size: 25px;
+  margin: 0 20px;
+}
+
+.rightnav{
+  color: white;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.signup {
+  margin: 0 15px 0 30px;
+  font-size: 14px;
+  background-color: #0099e5;
+  height: 30px;
+  width: 85px;
+  border-radius: 15px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  text-align: center;
+}

@@ -45,13 +45,13 @@ class NavBar extends React.Component {
   mainNav(){
     return (
       <div className="navbar">
-        <div >
-          <Link to="/" className="logo" > D-Dot </Link>
+        <div className="leftnav">
+          <Link to="/" className="link-text logo" > D-Dot </Link>
         </div>
 
-        <div>
-          <Link to="/login" className="navbar-link" style={{ textDecoration: 'none', color: 'white' }}>Log In</Link>
-          <Link to="/signup" className="navbar-link MyButton" >Sign Up</Link>
+        <div className="rightnav">
+          <Link to="/login" className="link-text navbar-link" style={{ textDecoration: 'none', color: 'white' }}>Log In</Link>
+          <Link to="/signup" className="link-text navbar-link signup" >Sign Up</Link>
         </div>
       </div>
     );
@@ -60,12 +60,12 @@ class NavBar extends React.Component {
   loggedIn(){
     return (
       <div className="navbar">
-        <div >
-          <Link to="/" className="logo" > D-Dot </Link>
+        <div className="leftnav">
+          <Link className='link-text logo' to="/" >D-Dot</Link>
         </div>
 
-        <div>
-          <strong onClick={this.handleLogOut}  style={{margin: '4px'}}>Log Out</strong>
+        <div className="rightnav">
+          <strong onClick={this.handleLogOut}>Log Out</strong>
           <button onClick={this.props.uploadPhotos}>Upload</button>
         </div>
       </div>
