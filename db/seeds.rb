@@ -12,15 +12,3 @@ user2 = User.create({username: 'Bill', password: '123456'})
 user3 = User.create({username: 'Mill', password: '123456'})
 user4 = User.create({username: 'Dill', password: '123456'})
 user5 = User.create({username: 'Phil', password: '123456'})
-
-photo1 = Photo.create({
-  title: 'First Photo',
-  description: 'Very first photo in the DB',
-  author_id: user3.id}
-)
-
-photo2 = Photo.create({
-    title: "Second photo",
-    description: "Very second photo in the DB",
-    author_id: 1
-})
