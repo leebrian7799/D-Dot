@@ -1,7 +1,7 @@
 import UploadForm from './upload_form';
 import { connect } from 'react-redux';
 import { createPhoto } from '../../actions/photo_actions';
-
+import { closeModal} from '../../actions/modal_actions'
 
 const mapStateToProps = state => {
   return {
@@ -11,7 +11,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch, { location }) => {
   return {
-    createPhoto: (photo) => dispatch(createPhoto(photo))
+    createPhoto: (photo) => dispatch(createPhoto(photo)),
+    closeModal: () => dispatch(closeModal())
   };
 };
 

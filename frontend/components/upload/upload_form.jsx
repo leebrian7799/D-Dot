@@ -32,6 +32,7 @@ class UploadForm extends React.Component {
   }
 
   handleUploadImage(e) {
+    e.preventDefault();
     if (!this.state.imageFile) {
       return;
     }
@@ -45,6 +46,7 @@ class UploadForm extends React.Component {
       //window.closeModal();
       // let newPath = `/${this.props.currentUser.username}`;
       // if (newPath !== this.props.location.pathname) {
+        this.props.closeModal();
         this.props.history.push('/feed');
       // }
     });
