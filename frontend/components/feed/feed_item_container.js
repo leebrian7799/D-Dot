@@ -10,7 +10,6 @@ const FeedItemContainer = (props) => {
         <div className="feed-item-header-profile-photo">
           <div
             className="feed-item-header-profile-photo-image"
-            style={{ backgroundImage: `url(${props.photo.authorProfilePhoto})`}}
             >
           </div>
         </div>
@@ -30,10 +29,6 @@ const FeedItemContainer = (props) => {
     </div>
   );
 };
-
-// <div className="feed-item">
-//   <img src={`${props.photo.image}`} />
-// </div>
 
 
 export default FeedItemContainer;

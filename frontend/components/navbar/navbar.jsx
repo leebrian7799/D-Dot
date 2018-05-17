@@ -68,6 +68,7 @@ class NavBar extends React.Component {
             <Link to="/signup" className="link-text navbar-link signup" >Sign Up</Link>
               : null
           }
+
         </div>
       </div>
     );
@@ -87,6 +88,8 @@ class NavBar extends React.Component {
       </div>
     );
   }
+  // <span style="backgroundImage: `url(asset_path())`"></span>
+  // <Image src={"/default_profile.png"}ß rounded />
 
   render(){
     let currentNavBar;
