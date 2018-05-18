@@ -1,7 +1,7 @@
 D-Dot is a full-stack single-page app inspired by the professional photo sharing website 500px. It's built with Ruby on Rails on the backend for a RESTful JSON API and React/Redux on the frontend.
 
 
-Features
+* Features
 
 
 User Authentication with demo-login
@@ -24,7 +24,7 @@ Users can use the demo-login provided to get right into the action.
 
 
 
-Login
+* Login
 
 
 User Photo Uploads
