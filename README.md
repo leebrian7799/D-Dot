@@ -5,16 +5,32 @@ Features
 
 
 User Authentication with demo-login
+
+
 User photo uploads
+
+
 Responsive photo display on some screen sizes via CSS
+
+
 Amazon Web Services (AWS) S3 Storage
+
+
 Uses PostgreSQL to handle database responsibilities
+
+
 Users can use the demo-login provided to get right into the action.
+
+
 
 
 Login
 
 
 User Photo Uploads
+
+
 Users can upload photos
+
+
 
