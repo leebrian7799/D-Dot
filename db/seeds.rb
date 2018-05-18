@@ -12,3 +12,22 @@ user2 = User.create({username: 'Bill', password: '123456'})
 user3 = User.create({username: 'Mill', password: '123456'})
 user4 = User.create({username: 'Dill', password: '123456'})
 user5 = User.create({username: 'Phil', password: '123456'})
+
+
+rand_photo_size = [
+  "https://picsum.photos/1920/1080/?random",
+  "https://picsum.photos/1920/1080/?random",
+  "https://picsum.photos/1920/1080/?random",
+  "https://picsum.photos/500/500/?random",
+  "https://picsum.photos/500/700/?random",
+  "https://picsum.photos/500/600/?random"
+]
+
+300.times do |i|
+  Photo.create!(
+    author_id: User.all.sample.id,
+    title: Faker::Simpsons.location,
+    description: Faker::Simpsons.quote,
+    image: URI.parse(rand_photo_size.sample)
+  )
+end
