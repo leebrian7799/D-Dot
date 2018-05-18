@@ -33,9 +33,9 @@ class SessionForm extends React.Component {
     });
   }
 
-  handleSubmit(e) {
+  handleSubmit(e, user) {
     e.preventDefault();
-    const user = this.state;
+    user = user || this.state;
     this.props.processForm({user});
   }
 
@@ -47,9 +47,9 @@ class SessionForm extends React.Component {
     }
   }
 
-  guestLogin(user){
+  guestLogin(e, user){
     this.setState(user);
-    this.handleSubmit();
+    this.handleSubmit(e, user);
   }
 
   render() {
@@ -61,7 +61,7 @@ class SessionForm extends React.Component {
             <br/>
             Please {this.props.formType} or {this.navLink()}
           </div>
-          
+
           <div className="login-form">
             <Errors />
             <br/>
@@ -89,7 +89,7 @@ class SessionForm extends React.Component {
           <div>
             {
               this.props.formType === 'login' ?
-                <input type="submit" value="Demo user" onClick={() => (this.guestLogin(
+                <input type="submit" value="Demo user" onClick={(e) => (this.guestLogin(e,
                     {username: "guest", password: "123456"}
                   ))}>
                 </input>
