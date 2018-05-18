@@ -18,6 +18,10 @@
   font-family: 'Arimo', sans-serif;
 }
 
+body{
+  background-color: #2C2F34;
+}
+
 .link-text {
   text-decoration: none;
   color: white;
@@ -58,6 +62,7 @@
     margin: auto;
 }
 
+
 .imageList {
     width: 100%;
     display: inline-block;
@@ -75,4 +80,6 @@
     border: 0;
     font: inherit;
     vertical-align: baseline;
+    flex-wrap: wrap;
+    justify-content: center;
 }
