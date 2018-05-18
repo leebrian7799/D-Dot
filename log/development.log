@@ -48159,3 +48159,671 @@ Processing by Api::PhotosController#index as JSON
 Completed 200 OK in 20ms (Views: 14.7ms | ActiveRecord: 0.5ms)
 
 
+Started DELETE "/api/session" for 127.0.0.1 at 2018-05-18 09:59:47 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-4GYhpwP6Ia5ch1NS_0yGA"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "guest"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "WfdS1ZYKIesI8VKQL0GGLQ"], ["updated_at", "2018-05-18 13:59:47.229250"], ["id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (2.3ms)
+  Rendered api/users/show.json.jbuilder (17.0ms)
+Completed 200 OK in 119ms (Views: 74.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 10:18:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (51.6ms)
+Completed 200 OK in 1148ms (Views: 1087.9ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-05-18 10:18:37 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"guest", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "guest"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "guest"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["updated_at", "2018-05-18 14:18:37.180126"], ["id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (3.9ms)
+Completed 200 OK in 155ms (Views: 68.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 10:19:31 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 716ms (Views: 668.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 10:19:40 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 67ms (Views: 63.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 10:59:21 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (3.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 1236ms (Views: 1219.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 10:59:23 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  Rendered api/photos/index.json.jbuilder (3.0ms)
+Completed 200 OK in 22ms (Views: 9.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:00:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 306ms (Views: 293.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:00:32 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (0.9ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  Rendered api/photos/index.json.jbuilder (3.5ms)
+Completed 200 OK in 30ms (Views: 14.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:00:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 544ms (Views: 541.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:00:34 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (1.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  Rendered api/photos/index.json.jbuilder (43.0ms)
+Completed 200 OK in 59ms (Views: 54.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:00:35 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 76ms (Views: 72.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:00:35 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  Rendered api/photos/index.json.jbuilder (3.1ms)
+Completed 200 OK in 18ms (Views: 14.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:00:53 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 71ms (Views: 67.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:00:53 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  Rendered api/photos/index.json.jbuilder (2.9ms)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:00:54 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 618ms (Views: 615.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:00:56 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 73ms (Views: 69.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:00:57 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 66ms (Views: 63.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:01:02 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 55ms (Views: 52.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:01:19 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 78ms (Views: 73.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:01:20 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 573ms (Views: 569.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:01:36 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 109ms (Views: 106.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:01:38 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 599ms (Views: 596.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:01:39 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (0.8ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  Rendered api/photos/index.json.jbuilder (2.9ms)
+Completed 200 OK in 32ms (Views: 12.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/photos" for 127.0.0.1 at 2018-05-18 11:02:48 -0400
+Processing by Api::PhotosController#create as JSON
+  Parameters: {"photo"=>{"title"=>"golden gate", "description"=>"bridge", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f88982e3948 @tempfile=#<Tempfile:/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/RackMultipart20180518-17482-z4z3f7.jpeg>, @original_filename="pexels-photo-196634.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"pexels-photo-196634.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "author_id"=>"undefined"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/4e484b8937f9096a9978ed200cefe14e20180518-17482-n93fsz.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/4e484b8937f9096a9978ed200cefe14e20180518-17482-d8kgqq.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/4e484b8937f9096a9978ed200cefe14e20180518-17482-d8kgqq.jpeg[0]'
+Command :: convert '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/4e484b8937f9096a9978ed200cefe14e20180518-17482-d8kgqq.jpeg[0]' -auto-orient -resize "x150" -crop "150x150+37+0" +repage '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/c3bcf01dd07a8af6248fc575e8ffeb2420180518-17482-1t6u3fx'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/4e484b8937f9096a9978ed200cefe14e20180518-17482-188ls9j.jpeg'
+  [1m[35mSQL (12.6ms)[0m  [1m[32mINSERT INTO "photos" ("title", "description", "author_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "golden gate"], ["description", "bridge"], ["author_id", 1], ["created_at", "2018-05-18 15:02:49.579098"], ["updated_at", "2018-05-18 15:02:49.579098"], ["image_file_name", "pexels-photo-196634.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 7761], ["image_updated_at", "2018-05-18 15:02:48.608150"]]
+[paperclip] saving /photos/images/000/000/001/original/pexels-photo-196634.jpeg
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/photos/show.json.jbuilder
+  Rendered api/photos/show.json.jbuilder (1.4ms)
+Completed 200 OK in 2294ms (Views: 17.2ms | ActiveRecord: 19.1ms)
+
+
+Started POST "/api/photos" for 127.0.0.1 at 2018-05-18 11:03:28 -0400
+Processing by Api::PhotosController#create as JSON
+  Parameters: {"photo"=>{"title"=>"chemtrail", "description"=>"Or just condensation trail", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f8898503f48 @tempfile=#<Tempfile:/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/RackMultipart20180518-17482-15n76dy.jpeg>, @original_filename="pexels-photo-783944.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"pexels-photo-783944.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "author_id"=>"undefined"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/73f97e5533d645ec08772d120847dda420180518-17482-t2yz73.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/73f97e5533d645ec08772d120847dda420180518-17482-1ul529e.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/73f97e5533d645ec08772d120847dda420180518-17482-1ul529e.jpeg[0]'
+Command :: convert '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/73f97e5533d645ec08772d120847dda420180518-17482-1ul529e.jpeg[0]' -auto-orient -resize "150x" -crop "150x150+0+24" +repage '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/a0d623b632f2ad30eabe249be0cf699920180518-17482-1w76wsh'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/73f97e5533d645ec08772d120847dda420180518-17482-rpsnmh.jpeg'
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "photos" ("title", "description", "author_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "chemtrail"], ["description", "Or just condensation trail"], ["author_id", 1], ["created_at", "2018-05-18 15:03:29.336254"], ["updated_at", "2018-05-18 15:03:29.336254"], ["image_file_name", "pexels-photo-783944.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 4985], ["image_updated_at", "2018-05-18 15:03:28.927526"]]
+[paperclip] saving /photos/images/000/000/002/original/pexels-photo-783944.jpeg
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/photos/show.json.jbuilder
+  Rendered api/photos/show.json.jbuilder (1.5ms)
+Completed 200 OK in 828ms (Views: 78.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:11:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (3.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 727ms (Views: 708.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:11:23 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (1.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/photos/index.json.jbuilder (29.2ms)
+Completed 200 OK in 57ms (Views: 33.4ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:15:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 250ms (Views: 241.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:15:34 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (1.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/photos/index.json.jbuilder (11.5ms)
+Completed 200 OK in 46ms (Views: 21.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:15:43 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 711ms (Views: 707.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:15:44 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/photos/index.json.jbuilder (9.2ms)
+Completed 200 OK in 68ms (Views: 16.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/photos" for 127.0.0.1 at 2018-05-18 11:16:21 -0400
+Processing by Api::PhotosController#create as JSON
+  Parameters: {"photo"=>{"title"=>"Grass", "description"=>"beach sunrise", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f8891f603a8 @tempfile=#<Tempfile:/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/RackMultipart20180518-17482-tp7gm4.jpeg>, @original_filename="pexels-photo-1089168.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"pexels-photo-1089168.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "author_id"=>"undefined"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/827f6d51b4e7d22de93d170c339b79cf20180518-17482-lv28x6.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/827f6d51b4e7d22de93d170c339b79cf20180518-17482-159iodc.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/827f6d51b4e7d22de93d170c339b79cf20180518-17482-159iodc.jpeg[0]'
+Command :: convert '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/827f6d51b4e7d22de93d170c339b79cf20180518-17482-159iodc.jpeg[0]' -auto-orient -resize "x150" -crop "150x150+58+0" +repage '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/ad5cb020aa34bc978f61cf66c1aa5f4b20180518-17482-65f8y8'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/827f6d51b4e7d22de93d170c339b79cf20180518-17482-okg8vx.jpeg'
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "photos" ("title", "description", "author_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Grass"], ["description", "beach sunrise"], ["author_id", 1], ["created_at", "2018-05-18 15:16:22.078895"], ["updated_at", "2018-05-18 15:16:22.078895"], ["image_file_name", "pexels-photo-1089168.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 8977], ["image_updated_at", "2018-05-18 15:16:21.509328"]]
+[paperclip] saving /photos/images/000/000/003/original/pexels-photo-1089168.jpeg
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/photos/show.json.jbuilder
+  Rendered api/photos/show.json.jbuilder (1.6ms)
+Completed 200 OK in 1073ms (Views: 69.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:18:16 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 530ms (Views: 527.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:18:17 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (0.8ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/photos/index.json.jbuilder (19.8ms)
+Completed 200 OK in 36ms (Views: 30.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:18:20 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 467ms (Views: 463.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:18:21 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/photos/index.json.jbuilder (13.6ms)
+Completed 200 OK in 29ms (Views: 23.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:18:27 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 66ms (Views: 63.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:18:27 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/photos/index.json.jbuilder (12.8ms)
+Completed 200 OK in 28ms (Views: 23.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/photos" for 127.0.0.1 at 2018-05-18 11:22:27 -0400
+Processing by Api::PhotosController#create as JSON
+  Parameters: {"photo"=>{"title"=>"running", "description"=>"in the dark", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f889aafa5d0 @tempfile=#<Tempfile:/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/RackMultipart20180518-17482-qkxnns.jpeg>, @original_filename="pexels-photo-796545.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"pexels-photo-796545.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "author_id"=>"undefined"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/e710442bd05d8b8c16a9bdb2c9cd3d5720180518-17482-n0unq9.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/e710442bd05d8b8c16a9bdb2c9cd3d5720180518-17482-ehbayw.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/e710442bd05d8b8c16a9bdb2c9cd3d5720180518-17482-ehbayw.jpeg[0]'
+Command :: convert '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/e710442bd05d8b8c16a9bdb2c9cd3d5720180518-17482-ehbayw.jpeg[0]' -auto-orient -resize "x150" -crop "150x150+37+0" +repage '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/c940e5d8047b4f93e1e430eac0734f6320180518-17482-romje6'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/e710442bd05d8b8c16a9bdb2c9cd3d5720180518-17482-1kbi7py.jpeg'
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "photos" ("title", "description", "author_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "running"], ["description", "in the dark"], ["author_id", 1], ["created_at", "2018-05-18 15:22:27.780703"], ["updated_at", "2018-05-18 15:22:27.780703"], ["image_file_name", "pexels-photo-796545.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 6132], ["image_updated_at", "2018-05-18 15:22:27.088234"]]
+[paperclip] saving /photos/images/000/000/004/original/pexels-photo-796545.jpeg
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/photos/show.json.jbuilder
+  Rendered api/photos/show.json.jbuilder (4.7ms)
+Completed 200 OK in 1508ms (Views: 85.6ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:24:59 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 523ms (Views: 514.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:24:59 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (0.9ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/photos/index.json.jbuilder (42.9ms)
+Completed 200 OK in 108ms (Views: 55.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:29:51 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 489ms (Views: 479.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:29:51 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/photos/index.json.jbuilder (20.1ms)
+Completed 200 OK in 50ms (Views: 30.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:30:20 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 614ms (Views: 610.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:30:21 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (0.8ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/photos/index.json.jbuilder (21.7ms)
+Completed 200 OK in 63ms (Views: 57.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:37:21 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 687ms (Views: 676.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:37:22 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (1.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/photos/index.json.jbuilder (17.1ms)
+Completed 200 OK in 43ms (Views: 28.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/api/photos" for 127.0.0.1 at 2018-05-18 11:39:56 -0400
+Processing by Api::PhotosController#create as JSON
+  Parameters: {"photo"=>{"title"=>"antelope canyon", "description"=>"woman trapped in rock", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f8896281e48 @tempfile=#<Tempfile:/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/RackMultipart20180518-17482-voytl4.jpeg>, @original_filename="photo-1523730205978-59fd1b2965e3.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"photo-1523730205978-59fd1b2965e3.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "author_id"=>"undefined"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/9427cf38c48a4078dee0e8e5059bb5ac20180518-17482-dv4z0s.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/9427cf38c48a4078dee0e8e5059bb5ac20180518-17482-9gx6sb.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/9427cf38c48a4078dee0e8e5059bb5ac20180518-17482-9gx6sb.jpeg[0]'
+Command :: convert '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/9427cf38c48a4078dee0e8e5059bb5ac20180518-17482-9gx6sb.jpeg[0]' -auto-orient -resize "150x" -crop "150x150+0+21" +repage '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/a852f401f712335e64ac2de860d68a3320180518-17482-1sgkk77'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/9427cf38c48a4078dee0e8e5059bb5ac20180518-17482-1kquewk.jpeg'
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "photos" ("title", "description", "author_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "antelope canyon"], ["description", "woman trapped in rock"], ["author_id", 1], ["created_at", "2018-05-18 15:39:57.235131"], ["updated_at", "2018-05-18 15:39:57.235131"], ["image_file_name", "photo-1523730205978-59fd1b2965e3.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 5472], ["image_updated_at", "2018-05-18 15:39:56.612692"]]
+[paperclip] saving /photos/images/000/000/005/original/photo-1523730205978-59fd1b2965e3.jpeg
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/photos/show.json.jbuilder
+  Rendered api/photos/show.json.jbuilder (3.3ms)
+Completed 200 OK in 1096ms (Views: 68.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:40:09 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (43.8ms)
+Completed 200 OK in 651ms (Views: 601.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:40:10 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (1.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/photos/index.json.jbuilder (20.4ms)
+Completed 200 OK in 52ms (Views: 29.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:46:53 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (3.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (55.5ms)
+Completed 200 OK in 653ms (Views: 632.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:46:55 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (1.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/photos/index.json.jbuilder (46.1ms)
+Completed 200 OK in 95ms (Views: 57.9ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/api/photos" for 127.0.0.1 at 2018-05-18 11:48:41 -0400
+Processing by Api::PhotosController#create as JSON
+  Parameters: {"photo"=>{"title"=>"Samsung", "description"=>"Chrome", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f889a379f68 @tempfile=#<Tempfile:/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/RackMultipart20180518-17482-qxg2yj.jpeg>, @original_filename="photo-1522205987242-8e22924ab42a.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"photo-1522205987242-8e22924ab42a.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "author_id"=>"undefined"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/5994c08d6982fdf700290d93682f69d020180518-17482-1hpal3s.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/5994c08d6982fdf700290d93682f69d020180518-17482-qodnv4.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/5994c08d6982fdf700290d93682f69d020180518-17482-qodnv4.jpeg[0]'
+Command :: convert '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/5994c08d6982fdf700290d93682f69d020180518-17482-qodnv4.jpeg[0]' -auto-orient -resize "150x" -crop "150x150+0+37" +repage '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/e81f4ccd38e05269569134afc09e782b20180518-17482-12tmmkz'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/5994c08d6982fdf700290d93682f69d020180518-17482-1fisd9l.jpeg'
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "photos" ("title", "description", "author_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Samsung"], ["description", "Chrome"], ["author_id", 1], ["created_at", "2018-05-18 15:48:41.960513"], ["updated_at", "2018-05-18 15:48:41.960513"], ["image_file_name", "photo-1522205987242-8e22924ab42a.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 6960], ["image_updated_at", "2018-05-18 15:48:41.490360"]]
+[paperclip] saving /photos/images/000/000/006/original/photo-1522205987242-8e22924ab42a.jpeg
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/photos/show.json.jbuilder
+  Rendered api/photos/show.json.jbuilder (1.7ms)
+Completed 200 OK in 1004ms (Views: 37.4ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/api/photos" for 127.0.0.1 at 2018-05-18 11:49:59 -0400
+Processing by Api::PhotosController#create as JSON
+  Parameters: {"photo"=>{"title"=>"Seattle", "description"=>"Space Needle", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f8893fc18b8 @tempfile=#<Tempfile:/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/RackMultipart20180518-17482-18h9i66.jpeg>, @original_filename="photo-1516433910977-17cdec50a693.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"photo-1516433910977-17cdec50a693.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "author_id"=>"undefined"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/d6056101edb1f7946df3382f976d34ac20180518-17482-k029tk.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/d6056101edb1f7946df3382f976d34ac20180518-17482-1y5mq22.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/d6056101edb1f7946df3382f976d34ac20180518-17482-1y5mq22.jpeg[0]'
+Command :: convert '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/d6056101edb1f7946df3382f976d34ac20180518-17482-1y5mq22.jpeg[0]' -auto-orient -resize "x150" -crop "150x150+37+0" +repage '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/7132678ffe7b64380f34ad14ca967b3f20180518-17482-1f3wo5j'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/5f/r3jlcm815sb7tw7lp72ybp8r0000gn/T/d6056101edb1f7946df3382f976d34ac20180518-17482-vt4eln.jpeg'
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "photos" ("title", "description", "author_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Seattle"], ["description", "Space Needle"], ["author_id", 1], ["created_at", "2018-05-18 15:50:00.026211"], ["updated_at", "2018-05-18 15:50:00.026211"], ["image_file_name", "photo-1516433910977-17cdec50a693.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 6926], ["image_updated_at", "2018-05-18 15:49:59.825489"]]
+[paperclip] saving /photos/images/000/000/007/original/photo-1516433910977-17cdec50a693.jpeg
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/photos/show.json.jbuilder
+  Rendered api/photos/show.json.jbuilder (1.7ms)
+Completed 200 OK in 665ms (Views: 10.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:56:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (3.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (43.1ms)
+Completed 200 OK in 596ms (Views: 577.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:56:33 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (1.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/photos/index.json.jbuilder (43.0ms)
+Completed 200 OK in 80ms (Views: 57.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:58:09 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 669ms (Views: 659.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 11:58:10 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (0.8ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/photos/index.json.jbuilder (28.6ms)
+Completed 200 OK in 58ms (Views: 39.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-18 12:00:45 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ALi5480-PnfIR29ctCVt3w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 444ms (Views: 434.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/photos" for 127.0.0.1 at 2018-05-18 12:00:46 -0400
+Processing by Api::PhotosController#index as JSON
+  Rendering api/photos/index.json.jbuilder
+  [1m[36mPhoto Load (0.8ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/photos/index.json.jbuilder (32.9ms)
+Completed 200 OK in 64ms (Views: 48.8ms | ActiveRecord: 1.7ms)
+
+

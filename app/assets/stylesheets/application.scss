@@ -47,3 +47,32 @@
   width: 650px;
   height: 650px;
 }
+
+.index-panel {
+    padding: 0;
+    background-color: transparent;
+    padding: 25px;
+    border-radius: 5px;
+    background-color: #2C2F34;
+    width: auto;
+    margin: auto;
+}
+
+.imageList {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    right: auto;
+    left: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.image-cards {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}

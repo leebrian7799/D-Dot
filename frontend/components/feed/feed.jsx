@@ -16,19 +16,28 @@ class Feed extends React.Component {
     if (that.props.photos.length) {
       allPhotos = that.props.photos.map( (photo, idx) => {
         return (
-          <div key={idx} className="feed-item-container">
-              <FeedItemContainer photo={photo} />
-          </div>
+          <FeedItemContainer photo={photo} />
         );
       }).reverse();
     }
 
     return (
-      <div>
-        { allPhotos }
-      </div>
+        <div className = "imageList">
+          <div className = "index-panel">
+            <div className = "imageList">
+              <div className = "index-posts">
+                <div className = "image-cards" >
+                  {allPhotos}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
     );
   }
 }
+
+
 
 export default Feed;

@@ -16,7 +16,7 @@ const FeedItemContainer = (props) => {
         <Link to={`/${props.photo.author}`}>{authorName}</Link>
       </div>
 
-      <div className="feed-item-image">
+      <div >
         <Link to={`/photos/${props.photo.id}`}>
           <img src={props.photo.image}></img>
         </Link>
