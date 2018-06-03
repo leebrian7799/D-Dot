@@ -2,6 +2,7 @@ import * as APIUtil from '../util/session_api_util';
 import {receiveErrors, clearErrors} from './error_actions'
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
+export const LOG_OUT = 'LOG_OUT';
 
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
@@ -18,6 +19,10 @@ export const signup = user => dispatch => (
   })
 );
 
+export const resetState = () => (
+    type: LOG_OUT
+)
+
 export const login = user => dispatch => (
   APIUtil.login(user).then(user => (
     dispatch(receiveCurrentUser(user))
@@ -29,5 +34,15 @@ export const login = user => dispatch => (
 export const logout = () => dispatch => (
   APIUtil.logout().then(user => (
     dispatch(receiveCurrentUser(null))
-  ))
+    )
+  )
 );
+
+export const logout = () => dispatch => (
+  APIUtil.logout().then(
+    (response) => {
+      dispatch(resetState());
+      dispatch(receiveCurrentUser(null));
+    }
+  )
+)
