@@ -19,9 +19,14 @@ export const signup = user => dispatch => (
   })
 );
 
-export const resetState = () => (
-    type: LOG_OUT
-)
+export const resetState = () =>
+  (
+    {
+      type: LOG_OUT
+    }
+
+  );
+
 
 export const login = user => dispatch => (
   APIUtil.login(user).then(user => (
@@ -29,13 +34,6 @@ export const login = user => dispatch => (
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
   ))
-);
-
-export const logout = () => dispatch => (
-  APIUtil.logout().then(user => (
-    dispatch(receiveCurrentUser(null))
-    )
-  )
 );
 
 export const logout = () => dispatch => (

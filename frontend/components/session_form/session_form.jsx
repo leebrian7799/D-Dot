@@ -54,16 +54,15 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="session-wrapper">
+      <div className="session-wrapper" style={{backgroundColor: '#a7a8aa'}}>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <div>
-            Welcome to D-Dot!
-            <br/>
-            Please {this.props.formType} or {this.navLink()}
+          <div className="log-in-greeting">
+            <span>Welcome to D-Dot!</span>
+            <span>Please {this.props.formType} or {this.navLink()}</span>
           </div>
 
           <div className="login-form">
-            <Errors />
+            <br />
             <br/>
             <label>Username
               <br/>
@@ -83,13 +82,14 @@ class SessionForm extends React.Component {
               />
             </label>
             <br/>
-            <input type="submit" value="Submit" />
+            <Errors/>
+            <input type="submit" className="login_button" value="Submit" />
           </div>
 
           <div>
             {
               this.props.formType === 'login' ?
-                <input type="submit" value="Demo user" onClick={(e) => (this.guestLogin(e,
+                <input type="submit" value="Demo user" className="demo_user" onClick={(e) => (this.guestLogin(e,
                     {username: "guest", password: "123456"}
                   ))}>
                 </input>

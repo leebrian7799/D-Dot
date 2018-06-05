@@ -16,6 +16,8 @@ const UserReducer (state = {}, action){
     case updateUser:
       let newState = merge({}, state)
       return newState = merge({}, state, action.user);
+    case LOG_OUT:
+      return {};
     default:
       return state;
 

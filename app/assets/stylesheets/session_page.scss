@@ -10,6 +10,7 @@
 }
 
 .login-form-box{
+  background-color: white;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -17,9 +18,10 @@
   align-items: center;
   border-style: solid;
   border-width: 1px;
-  border-color: lightgrey;
+  border-color: white;
   width: 500px;
-  height: 400px;
+  height: 50%;
+
 }
 
 .login-form{
@@ -27,4 +29,28 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.login-input{
+  border-radius: 3px;
+}
+
+.demo_user{
+  margin-top: 20%;
+}
+
+.errors{
+  display: flex;
+  flex-direction: column;
+  color: red;
+}
+
+.log-in-greeting{
+  display: flex;
+  flex-direction: column;
+}
+.login_button{
+  margin: auto;
+  margin-top: 10px;
+  width: 60px;
 }

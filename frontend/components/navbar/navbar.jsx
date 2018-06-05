@@ -60,7 +60,7 @@ class NavBar extends React.Component {
         <div className="rightnav">
           {
             (this.props.location.pathname === '/signup' || this.props.location.pathname === '/') ?
-              <Link to="/login" className="link-text navbar-link" style={{ textDecoration: 'none', color: 'white' }}>Log In</Link>
+              <Link to="/login" className="link-text navbar-link signup" style={{ textDecoration: 'none', color: 'white' }}>Log In</Link>
               : null
           }
           {
@@ -84,6 +84,22 @@ class NavBar extends React.Component {
         <div className="rightnav">
           <strong onClick={this.handleLogOut}>Log Out</strong>
           <button onClick={this.props.uploadPhotos}>Upload</button>
+
+          <div className="user-profile-options">
+            <div className="navbar-profile-photo-container">
+              <div className="navbar-profile-photo-image">
+                <div />
+              </div>
+            </div>
+            <div className="user-profile-dropdown">
+              <ul>
+                <li>{this.props.currentUsername}</li>
+                <li onClick={this.handleProfileLink}>Profile</li>
+              </ul>
+            </div>
+          </div>
+
+
         </div>
       </div>
     );
