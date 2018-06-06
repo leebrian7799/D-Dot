@@ -1,7 +1,7 @@
 .front{
   height: calc(80vh);
   min-height: 320px;
-  background-image: url('https://s3.amazonaws.com/ddot500px-dev/photos/images/000/000/001/original/willis-tower.jpg');
+  background-image: image_url('/assets/willis-tower.jpg');
   background-size: 100% 100%;
   display: flex;
   flex-flow: column;
