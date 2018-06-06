@@ -23,7 +23,7 @@ rand_photo_size = [
   "https://picsum.photos/500/600/?random"
 ]
 
-300.times do |i|
+75.times do |i|
   Photo.create!(
     author_id: User.all.sample.id,
     title: Faker::Simpsons.location,
