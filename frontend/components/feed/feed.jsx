@@ -1,5 +1,5 @@
 import React from 'react';
-import FeedItemContainer from './feed_item_container';
+import PhotoItemContainer from '../photo/photo_container';
 
 class Feed extends React.Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class Feed extends React.Component {
     if (that.props.photos.length) {
       allPhotos = that.props.photos.map( (photo, idx) => {
         return (
-          <FeedItemContainer photo={photo} />
+          <PhotoItemContainer photo={photo} />
         );
       }).reverse();
     }

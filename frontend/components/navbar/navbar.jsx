@@ -82,7 +82,7 @@ class NavBar extends React.Component {
         </div>
 
         <div className="rightnav">
-          <strong onClick={this.handleLogOut}>Log Out</strong>
+          <strong onClick={this.handleLogOut} className = "signup">Log Out</strong>
           <button onClick={this.props.uploadPhotos}>Upload</button>
 
           <div className="user-profile-options">
@@ -93,8 +93,8 @@ class NavBar extends React.Component {
             </div>
             <div className="user-profile-dropdown">
               <ul>
-                <li>{this.props.currentUsername}</li>
-                <li onClick={this.handleProfileLink}>Profile</li>
+                <li className = "signup">{this.props.currentUsername}</li>
+                <li onClick={this.handleProfileLink} className = "signup">Profile</li>
               </ul>
             </div>
           </div>
@@ -104,8 +104,7 @@ class NavBar extends React.Component {
       </div>
     );
   }
-  // <span style="backgroundImage: `url(asset_path())`"></span>
-  // <Image src={"/default_profile.png"}ß rounded />
+
 
   render(){
     let currentNavBar;

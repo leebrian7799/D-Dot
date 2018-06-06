@@ -1,46 +1,22 @@
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import Photo from './photo';
-import { fetchShowPhoto, deletePhoto } from '../../actions/photo_actions';
-import { fetchSingleUser } from '../../actions/user_actions';
+import { connect } from 'react-redux';
+import { closeModal, openModal} from '../../actions/modal_actions'
+import FeedItemContainer from '../feed/feed_item_container';
 
-
-const mapStateToProps = (state, ownProps) => {
-  let currentPhoto = state.entities.photos[ownProps.match.params.photoId];
-  let sessionUser = state.session.currentUser ? state.session.currentUser.username : null;
-  let currentUser = state.entities.users[sessionUser];
-
-  let photoComments;
-
-  if (
-    currentPhoto &&
-    Object.values(state.entities.comments).length && Object.values(state.entities.comments).every( (comment) => comment !== undefined )) {
-    photoComments = Object.values(state.entities.comments).filter( (comment) => comment.photoId === currentPhoto.id);
-  }
-
+const mapStateToProps = state => {
   return {
-    currentPhoto: currentPhoto,
-    currentUser: currentUser,
-    sessionUser: sessionUser,
-    photoId: ownProps.match.params.photoId,
-    photoComments: photoComments
+    currentUser: state.session.currentUser.username,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, { location }) => {
   return {
-    fetchSingleUser: (username) => dispatch(fetchSingleUser(username)),
-    fetchShowPhoto: (photoId) => dispatch(fetchShowPhoto(photoId)),
-    deletePhoto: (photo) => dispatch(deletePhoto(photo)),
-    createFollow: (follow) => dispatch(createFollow(follow)),
-    deleteFollow: (follow) => dispatch(deleteFollow(follow)),
-    createComment: (comment) => dispatch(createComment(comment)),
-    updateComment: (comment) => dispatch(updateComment(comment)),
-    deleteComment: (commentId) => dispatch(deleteComment(commentId))
+    closeModal: () => dispatch(closeModal()),
+    displayPhoto: () => dispatch(openModal('displayPhoto'))
   };
 };
 
-export default withRouter(connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Photo));
+)(FeedItemContainer);

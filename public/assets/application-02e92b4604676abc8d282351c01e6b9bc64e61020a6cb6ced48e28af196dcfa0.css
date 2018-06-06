@@ -1,0 +1,344 @@
+/* line 1, /home/brian/Desktop/D-Dot/app/assets/stylesheets/api/feed.scss */
+#feed {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 60px;
+  letter-spacing: 0.5px;
+  -webkit-animation: slideUp 0.8s;
+}
+
+/* line 13, /home/brian/Desktop/D-Dot/app/assets/stylesheets/api/feed.scss */
+.feed-item-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 70px;
+  background-color: #CC9999;
+}
+
+/* line 21, /home/brian/Desktop/D-Dot/app/assets/stylesheets/api/feed.scss */
+.feed-item {
+  background-color: white;
+  margin: 20px 0;
+  width: 300px;
+  height: 300px;
+  border: 60px solid #ededed;
+}
+/* line 1, /home/brian/Desktop/D-Dot/app/assets/stylesheets/front_page.scss */
+.front {
+  height: calc(80vh);
+  min-height: 320px;
+  background-image: url(/images/willis-tower.jpg);
+  background-size: 100% 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 12, /home/brian/Desktop/D-Dot/app/assets/stylesheets/front_page.scss */
+.banner {
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+/* line 20, /home/brian/Desktop/D-Dot/app/assets/stylesheets/front_page.scss */
+.header1 {
+  font-size: 50px;
+  padding-bottom: 40px;
+}
+
+/* line 25, /home/brian/Desktop/D-Dot/app/assets/stylesheets/front_page.scss */
+.header2 {
+  font-size: 22px;
+}
+
+/* line 29, /home/brian/Desktop/D-Dot/app/assets/stylesheets/front_page.scss */
+.joinbutton {
+  margin-top: 40px;
+  font-size: 18px;
+  background-color: #0099e5;
+  height: 50px;
+  width: 160px;
+  border-radius: 25px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+/* line 1, /home/brian/Desktop/D-Dot/app/assets/stylesheets/navbar.scss */
+.navbar {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  flex-flow: row, nowrap;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  font-size: 14px;
+  z-index: 8;
+  font-family: Helvetica;
+}
+
+/* line 14, /home/brian/Desktop/D-Dot/app/assets/stylesheets/navbar.scss */
+.leftnav {
+  color: white;
+}
+
+/* line 18, /home/brian/Desktop/D-Dot/app/assets/stylesheets/navbar.scss */
+.logo {
+  font-size: 25px;
+  margin: 0 20px;
+}
+
+/* line 23, /home/brian/Desktop/D-Dot/app/assets/stylesheets/navbar.scss */
+.rightnav {
+  color: lightgray;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+/* line 31, /home/brian/Desktop/D-Dot/app/assets/stylesheets/navbar.scss */
+.profile_pic {
+  background-Image: "/assets/willis-tower-b151d6010af5b60416c59393a2e6afbd4ad6ec789037da6e01b9434c4d32a20e.jpg";
+}
+
+/* line 35, /home/brian/Desktop/D-Dot/app/assets/stylesheets/navbar.scss */
+.signup {
+  margin: 0 15px 0 30px;
+  font-size: 14px;
+  background-color: #0099e5;
+  height: 30px;
+  width: 85px;
+  border-radius: 15px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  text-align: center;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  align-self: center;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* line 1, /home/brian/Desktop/D-Dot/app/assets/stylesheets/session_page.scss */
+.session-wrapper {
+  background-color: #777777;
+  background-image: url(/images/mountain.jpg);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 13, /home/brian/Desktop/D-Dot/app/assets/stylesheets/session_page.scss */
+.login-form-box {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  width: 500px;
+  height: 50%;
+}
+
+/* line 28, /home/brian/Desktop/D-Dot/app/assets/stylesheets/session_page.scss */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* line 35, /home/brian/Desktop/D-Dot/app/assets/stylesheets/session_page.scss */
+.login-input {
+  border-radius: 3px;
+}
+
+/* line 39, /home/brian/Desktop/D-Dot/app/assets/stylesheets/session_page.scss */
+.demo_user {
+  margin-top: 20%;
+}
+
+/* line 43, /home/brian/Desktop/D-Dot/app/assets/stylesheets/session_page.scss */
+.errors {
+  display: flex;
+  flex-direction: column;
+  color: red;
+}
+
+/* line 49, /home/brian/Desktop/D-Dot/app/assets/stylesheets/session_page.scss */
+.log-in-greeting {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 53, /home/brian/Desktop/D-Dot/app/assets/stylesheets/session_page.scss */
+.login_button {
+  margin: auto;
+  margin-top: 10px;
+  width: 60px;
+}
+/* line 1, /home/brian/Desktop/D-Dot/app/assets/stylesheets/upload.scss */
+.upload-form {
+  position: absolute;
+  margin: 100px;
+}
+/* line 4, /home/brian/Desktop/D-Dot/app/assets/stylesheets/upload.scss */
+.upload-form img {
+  height: 200px;
+  width: 200px;
+}
+
+/* line 10, /home/brian/Desktop/D-Dot/app/assets/stylesheets/upload.scss */
+.modalImagge {
+  position: absolute;
+  margin: 50px;
+  height: 500px;
+  width: 500px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/* line 18, /home/brian/Desktop/D-Dot/app/assets/stylesheets/application.scss */
+.app {
+  font-family: 'Arimo', sans-serif;
+}
+
+/* line 22, /home/brian/Desktop/D-Dot/app/assets/stylesheets/application.scss */
+body {
+  background-color: #2C2F34;
+}
+
+/* line 26, /home/brian/Desktop/D-Dot/app/assets/stylesheets/application.scss */
+.link-text {
+  text-decoration: none;
+  color: white;
+}
+
+/* line 31, /home/brian/Desktop/D-Dot/app/assets/stylesheets/application.scss */
+.signup:hover, .joinbutton:hover {
+  background-color: #00aaff;
+}
+
+/* line 35, /home/brian/Desktop/D-Dot/app/assets/stylesheets/application.scss */
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+/* line 45, /home/brian/Desktop/D-Dot/app/assets/stylesheets/application.scss */
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  background-color: white;
+  width: 650px;
+  height: 650px;
+}
+
+/* line 56, /home/brian/Desktop/D-Dot/app/assets/stylesheets/application.scss */
+.index-panel {
+  padding: 0;
+  background-color: transparent;
+  padding: 25px;
+  border-radius: 5px;
+  background-color: #2C2F34;
+  width: auto;
+  margin: auto;
+}
+
+/* line 67, /home/brian/Desktop/D-Dot/app/assets/stylesheets/application.scss */
+.imageList {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  right: auto;
+  left: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* line 77, /home/brian/Desktop/D-Dot/app/assets/stylesheets/application.scss */
+.image-cards {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  flex-wrap: wrap;
+  justify-content: center;
+}

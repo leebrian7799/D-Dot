@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import UploadFormContainer from '../upload/upload_form_container';
+import PhotoContainer from '../photo/photo_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -11,6 +12,9 @@ function Modal({modal, closeModal}) {
   switch (modal) {
     case 'uploadPhoto':
       component = <UploadFormContainer />;
+      break;
+    case 'displayPhoto':
+     component = <PhotoContainer />;
       break;
     default:
       return null;
