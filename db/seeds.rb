@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+User.destroy_all
+Photo.destroy_all
+
 user1 = User.create({username: 'guest', password: '123456'})
 user2 = User.create({username: 'Bill', password: '123456'})
 user3 = User.create({username: 'Mill', password: '123456'})
@@ -23,7 +26,7 @@ rand_photo_size = [
   "https://picsum.photos/500/600/?random"
 ]
 
-75.times do |i|
+5.times do |i|
   Photo.create!(
     author_id: User.all.sample.id,
     title: Faker::Simpsons.location,
