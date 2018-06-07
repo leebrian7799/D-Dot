@@ -57,31 +57,25 @@ class SessionForm extends React.Component {
       <div className="session-wrapper" style={{backgroundColor: '#a7a8aa'}}>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="log-in-greeting">
-            <span>Welcome to D-Dot!</span>
-            <span>Please {this.props.formType} or {this.navLink()}</span>
+            <span className="greeting-header">Welcome to D-Dot!</span>
+            <span className="session-redirect">Please {this.props.formType} or {this.navLink()}</span>
           </div>
 
           <div className="login-form">
-            <br />
-            <br/>
-            <label>Username
-              <br/>
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <label>Password
-              <br/>
-              <input type="Password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-              />
-            </label>
-            <br/>
+            <label className = "username">Username</label>
+            <input type="text"
+              value={this.state.username}
+              onChange={this.update('username')}
+              className="login-input"
+            />
+
+            <label className = "password">Password</label>
+            <input type="Password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              className="login-input"
+            />
+
             <Errors/>
             <input type="submit" className="login_button" value="Submit" />
           </div>
@@ -102,8 +96,5 @@ class SessionForm extends React.Component {
     );
   }
 }
-
-
-
 
 export default withRouter(SessionForm);

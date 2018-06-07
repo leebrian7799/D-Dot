@@ -17,9 +17,6 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  border-style: solid;
-  border-width: 1px;
-  border-color: white;
   width: 500px;
   height: 50%;
 
@@ -27,13 +24,16 @@
 
 .login-form{
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-flow: column wrap;
+  width: 300px;
 }
 
 .login-input{
   border-radius: 3px;
+  border: 1px solid rgba(185, 193, 199, 0.5);
+  color: #525558;
+  padding: 8px 10px;
+  width: 100%;
 }
 
 .demo_user{
@@ -49,9 +49,29 @@
 .log-in-greeting{
   display: flex;
   flex-direction: column;
+  font-family: Helvetica, sans-serif;
 }
+
+.greeting-header {
+  font-size: 24px;
+  color: #525558;
+}
+
+.session-redirect {
+  font-size: 16px;
+  color: #71767a;
+  margin-top: 15px;
+}
+
 .login_button{
   margin: auto;
   margin-top: 10px;
   width: 60px;
+}
+
+.username, .password{
+  color: #71767A;
+  font-size: 14px;
+  margin: 15px 0 5px 0;
+  align-self: flex-start;
 }
