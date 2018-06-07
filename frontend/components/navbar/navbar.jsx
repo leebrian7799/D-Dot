@@ -83,7 +83,7 @@ class NavBar extends React.Component {
 
         <div className="rightnav">
           <strong onClick={this.handleLogOut} className = "signup">Log Out</strong>
-          <button onClick={this.props.uploadPhotos}>Upload</button>
+          <button onClick={this.props.uploadPhotos} className = "upload">Upload</button>
 
           <div className="user-profile-options">
             <div className="navbar-profile-photo-container">
@@ -91,12 +91,7 @@ class NavBar extends React.Component {
                 <div />
               </div>
             </div>
-            <div className="user-profile-dropdown">
-              <ul>
-                <li className = "signup">{this.props.currentUsername}</li>
-                <li onClick={this.handleProfileLink} className = "signup">Profile</li>
-              </ul>
-            </div>
+
           </div>
 
 
@@ -105,6 +100,14 @@ class NavBar extends React.Component {
     );
   }
 
+
+
+  // <div className="user-profile-dropdown">
+  //   <ul>
+  //     <li className = "signup">{this.props.currentUsername}</li>
+  //     <li onClick={this.handleProfileLink} className = "signup">Profile</li>
+  //   </ul>
+  // </div>
 
   render(){
     let currentNavBar;

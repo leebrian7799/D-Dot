@@ -5,6 +5,11 @@ const FeedItemContainer = (props) => {
 
   if (props.photo){
     let authorName = props.photo.author;
+    var pStyle = {
+      color: 'gray',
+      fontSize: '18px',
+      padding: "3px",
+    };
     return (
       <div className="feed-item">
         <div className="feed-item-header">
@@ -14,15 +19,16 @@ const FeedItemContainer = (props) => {
               >
             </div>
           </div>
-          <Link to={`/${props.photo.author}`}>{authorName}</Link>
+          <div style={{padding: '5px'}}>{authorName}</div>
         </div>
 
         <div >
           <img src={props.photo.image} onClick={props.displayPhoto}></img>
         </div>
 
+
         <div className="feed-item-description">
-          <p>{props.photo.title}</p>
+          <p style={pStyle}>{props.photo.title}</p>
           <p>{props.photo.description}</p>
         </div>
       </div>

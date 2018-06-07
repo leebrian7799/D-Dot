@@ -65,8 +65,9 @@ class UploadForm extends React.Component {
         <div className="upload-form" >
           <img src={this.state.imageUrl} />
           <form onSubmit={this.handleUploadImage}>
-            Title: <input type="text" onChange={this.handleChange('title')} required/><br/>
-          Description: <textarea type="text" onChange={this.handleChange('description')} required/><br/>
+            <div>Title: <input type="text" onChange={this.handleChange('title')} required/></div>
+            <div>Description:</div>
+            <div><textarea type="text" onChange={this.handleChange('description')} required/></div>
           <input type="submit" />
           </form>
         </div>

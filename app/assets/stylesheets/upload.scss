@@ -2,14 +2,20 @@
   position: absolute;
   margin: 100px;
     img{
-      height: 200px;
-      width: 200px;
+      height: 300px;
+      width: 300px;
+      margin: 20px;
     }
+    form div {
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
 }
 
 .modalImagge{
   position: absolute;
-  margin: 50px;
+  margin: 75px;
   height: 500px;
   width: 500px;
 }
