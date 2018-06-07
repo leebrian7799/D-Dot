@@ -41,12 +41,12 @@ class NavBar extends React.Component {
     this.props.logout().then(() => this.props.history.push('/'));
   }
 
-
   mainNav(){
     return (
       <div className="navbar">
         <div className="leftnav">
-          <Link to="/" className="link-text logo" > D-Dot </Link>
+        <Link to="/" className="link-text logo" > D-Dot </Link>
+
         </div>
         {
           this.props.formType === 'login' ?
@@ -78,7 +78,7 @@ class NavBar extends React.Component {
     return (
       <div className="navbar">
         <div className="leftnav">
-          <Link className='link-text logo' to="/" >D-Dot</Link>
+          <Link className='link-text logo loggedIn' to="/" >D-Dot</Link>
         </div>
 
         <div className="rightnav">

@@ -23,15 +23,7 @@ class Feed extends React.Component {
 
     return (
         <div className = "imageList">
-          <div className = "index-panel">
-            <div className = "imageList">
-              <div className = "index-posts">
-                <div className = "image-cards" >
                   {allPhotos}
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
     );
