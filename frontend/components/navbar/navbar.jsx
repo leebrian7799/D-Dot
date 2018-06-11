@@ -100,15 +100,6 @@ class NavBar extends React.Component {
     );
   }
 
-
-
-  // <div className="user-profile-dropdown">
-  //   <ul>
-  //     <li className = "signup">{this.props.currentUsername}</li>
-  //     <li onClick={this.handleProfileLink} className = "signup">Profile</li>
-  //   </ul>
-  // </div>
-
   render(){
     let currentNavBar;
     if (this.props.currentUser) {
