@@ -1,22 +1,21 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import Feed from './feed';
-import { fetchAllPhotos } from '../../actions/photo_actions';
+import Comment from './feed';
+import { fetchAllComments } from '../../actions/comment_actions';
 
 const msp = (state) => {
-
   return {
-    photos: Object.values(state.entities.photos)
+    comments: Object.values(state.entities.comments)
   };
 };
 
 const mdp = (dispatch) => {
   return {
-    fetchAllPhotos: () => dispatch(fetchAllPhotos()),
+    fetchAllComments: () => dispatch(fetchAllComments()),
   };
 };
 
 export default withRouter(connect(
   msp,
   mdp
-)(Feed));
+)(comment));

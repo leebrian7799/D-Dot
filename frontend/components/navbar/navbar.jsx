@@ -14,7 +14,6 @@ class NavBar extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleLogOut = this.handleLogOut.bind(this);
     this.mainNav = this.mainNav.bind(this);
-    // this.readFile = this.readFile.bind(this);
     }
 
   componentWillReceiveProps(newProps) {
@@ -96,11 +95,7 @@ class NavBar extends React.Component {
     );
   }
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 960d8d54eb68c2d0d4bc03752ed70797df38ce53
   render(){
     let currentNavBar;
     if (this.props.currentUser) {
@@ -111,5 +106,5 @@ class NavBar extends React.Component {
     return currentNavBar;
   }
 }
-//
+
 export default withRouter(NavBar);
