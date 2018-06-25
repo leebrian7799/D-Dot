@@ -96,8 +96,11 @@ class NavBar extends React.Component {
     );
   }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 960d8d54eb68c2d0d4bc03752ed70797df38ce53
   render(){
     let currentNavBar;
     if (this.props.currentUser) {
