@@ -11,7 +11,6 @@ class NavBar extends React.Component {
     };
 
     this.handleModal = this.handleModal.bind(this);
-    this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleLogOut = this.handleLogOut.bind(this);
     this.mainNav = this.mainNav.bind(this);
@@ -27,10 +26,6 @@ class NavBar extends React.Component {
     this.setState({modalOpen: boolean});
   }
 
-  openModal() {
-    // this.setState({modalOpen: true});
-    document.getElementById('upload-modal').show();
-  }
 
   closeModal() {
     this.setState({modalOpen: false});
@@ -42,6 +37,7 @@ class NavBar extends React.Component {
   }
 
   mainNav(){
+
     return (
       <div className="navbar">
         <div className="leftnav">
@@ -101,13 +97,6 @@ class NavBar extends React.Component {
   }
 
 
-
-  // <div className="user-profile-dropdown">
-  //   <ul>
-  //     <li className = "signup">{this.props.currentUsername}</li>
-  //     <li onClick={this.handleProfileLink} className = "signup">Profile</li>
-  //   </ul>
-  // </div>
 
   render(){
     let currentNavBar;

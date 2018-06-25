@@ -1,6 +1,6 @@
 const Photo = (props) => {
   return (
-    <p>Hello</p>
+    <p></p>
   )
 };
 

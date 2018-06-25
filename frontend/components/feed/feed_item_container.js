@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CommentBox from '../photo/comments_form/comment';
 
 const FeedItemContainer = (props) => {
   if (props.photo){
@@ -19,6 +20,7 @@ const FeedItemContainer = (props) => {
     return <div>
               <img src={event.target.src}  className = "modalImagge"/>
               <p>{event.path[1].children[1].children[2].textContent}</p>
+              <CommentBox />
             </div>
   }
 
