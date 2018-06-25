@@ -16,14 +16,14 @@ class Feed extends React.Component {
     if (that.props.photos.length) {
       allPhotos = that.props.photos.map( (photo, idx) => {
         return (
-          <PhotoItemContainer photo={photo} />
+          <PhotoItemContainer key={idx} photo={photo} />
         );
       }).reverse();
     }
 
     return (
         <div className = "imageList">
-                  {allPhotos}
+          {allPhotos}
         </div>
 
     );

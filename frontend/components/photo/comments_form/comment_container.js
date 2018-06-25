@@ -5,7 +5,7 @@ import { fetchAllComments } from '../../actions/comment_actions';
 
 const msp = (state) => {
   return {
-    comments: Object.values(state.entities.comments)
+    comments: Object.values(state.comments)
   };
 };
 
